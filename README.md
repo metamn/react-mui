@@ -122,26 +122,27 @@ const useStyles = makeStyles(theme => ({
 
 #### `react-responsive`
 
-- https://github.com/metamn/inu-v2-b/blob/master/react-src/src/hooks/useMedia.js
-- https://github.com/metamn/inu-v2-b/blob/master/react-src/src/components/Home/Home.js
+- src/hooks/useMedia/useMedia.js
 
 ```js
 const useStyles = makeStyles(theme => ({
-  dashboard: {
-    "& .dashboardContentContainer": {
-      paddingLeft: theme.spacing(20),
-      paddingRight: theme.spacing(20),
-      overflow: "hidden",
+  card: {
+    display: "flex",
 
-      [`${Media.mobile}`]: {
-        ...props.theme.padding.mobile,
-        ...SectionMobile
-      },
+    [`${Media.portrait}`]: {
+      flexDirection: "column"
+    },
 
-      [`${Media.tablet}`]: {
-        ...props.theme.padding.tablet,
-        ...SectionTablet(props)
-      }
+    [`${Media.landscape}`]: {
+      alignItems: "center"
+    }
+  },
+  media: {
+    width: 512,
+    height: 512,
+
+    [`${Media.landscape}`]: {
+      order: 2
     }
   }
 }));
