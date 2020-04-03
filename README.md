@@ -53,6 +53,11 @@ Playing with React and Material UI
 - It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
 - So it's ... a Card component
 
+## Features
+
+- It's a list of components ... so Grid has to be used
+- Components resemble the features of a Card ... so they are Card components
+
 ## Responsiveness
 
 ### Inside `makeStyles`
