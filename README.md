@@ -50,7 +50,7 @@ Playing with React and Material UI.
 
 - Toolbar is just a colored bar. It needs to be filled with a Menu, Search, Icons, Site title etc ...
 
-## Grid
+### Grid
 
 - Every content element has to be wrapped into `<Grid item>` component.
 - Grid items (even a single one) has to be wrapped into a `<Grid container>` component
@@ -64,7 +64,7 @@ Playing with React and Material UI.
 </Grid>
 ```
 
-## Content
+### Content
 
 - Content elements should be placed inside a grid item.
 - Content elements should be all Cards whenever possible.
@@ -90,11 +90,11 @@ Playing with React and Material UI.
 </Grid>
 ```
 
-## Responsiveness
+### Responsiveness
 
-### Inside `makeStyles`
+#### Inside `makeStyles`
 
-#### `theme.breakpoints`
+##### `theme.breakpoints`
 
 - https://material-ui.com/customization/default-theme/#default-theme
 - Quite limited (like has no `portrait` or `landscape` options)
@@ -120,7 +120,7 @@ const useStyles = makeStyles(theme => ({
 }));
 ```
 
-#### `react-responsive`
+##### `react-responsive`
 
 - https://github.com/contra/react-responsive
 - src/hooks/useMedia/useMedia.js
@@ -149,18 +149,18 @@ const useStyles = makeStyles(theme => ({
 }));
 ```
 
-### Outside `makeStyles`
+#### Outside `makeStyles`
 
 - MUI's own https://material-ui.com/components/use-media-query/#usemediaquery
 
-### Examples in this current project
+## Examples in this current project
 
-## Hero
+### Hero
 
 - It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
 - So it's ... a Card component
 
-## Features
+### Features
 
 - It's a list of components ... so Grid has to be used
 - Components resemble the features of a Card ... so they are Card components
