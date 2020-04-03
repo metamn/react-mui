@@ -52,3 +52,64 @@ Playing with React and Material UI
 
 - It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
 - So it's ... a Card component
+
+## Responsiveness
+
+### Inside `makeStyles`
+
+#### `theme.breakpoints`
+
+- https://material-ui.com/customization/default-theme/#default-theme
+- Quite limited (like has no `portrait` or `landscape` options)
+
+```js
+const useStyles = makeStyles(theme => ({
+  dashboard: {
+    "& .dashboardContentContainer": {
+      paddingLeft: theme.spacing(20),
+      paddingRight: theme.spacing(20),
+      overflow: "hidden",
+
+      [theme.breakpoints.down("lg")]: {
+        paddingLeft: theme.spacing(10),
+        paddingRight: theme.spacing(10)
+      },
+      [theme.breakpoints.down("md")]: {
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2)
+      }
+    }
+  }
+}));
+```
+
+#### `react-responsive`
+
+- https://github.com/metamn/inu-v2-b/blob/master/react-src/src/hooks/useMedia.js
+- https://github.com/metamn/inu-v2-b/blob/master/react-src/src/components/Home/Home.js
+
+```js
+const useStyles = makeStyles(theme => ({
+  dashboard: {
+    "& .dashboardContentContainer": {
+      paddingLeft: theme.spacing(20),
+      paddingRight: theme.spacing(20),
+      overflow: "hidden",
+
+      [`${Media.mobile}`]: {
+        ...props.theme.padding.mobile,
+        ...SectionMobile
+      },
+
+      [`${Media.tablet}`]: {
+        ...props.theme.padding.tablet,
+        ...SectionTablet(props)
+      }
+    }
+  }
+}));
+```
+
+### Outside `makeStyles`
+
+- MUI's own https://material-ui.com/components/use-media-query/#usemediaquery
