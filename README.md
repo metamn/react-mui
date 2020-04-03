@@ -122,6 +122,7 @@ const useStyles = makeStyles(theme => ({
 
 #### `react-responsive`
 
+- https://github.com/contra/react-responsive
 - src/hooks/useMedia/useMedia.js
 
 ```js
