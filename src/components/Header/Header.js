@@ -21,7 +21,7 @@ const defaultProps = {};
 const Header = props => {
   return (
     <div className="Header">
-      <AppBar>
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">Home</Typography>
         </Toolbar>

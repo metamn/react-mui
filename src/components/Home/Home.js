@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Header from "../Header";
+import Hero from "../Hero";
 
 import Container from "@material-ui/core/Container";
 
@@ -22,6 +23,7 @@ const Home = props => {
   return (
     <Container className="Home" maxWidth={false}>
       <Header />
+      <Hero />
     </Container>
   );
 };
