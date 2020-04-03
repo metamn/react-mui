@@ -70,6 +70,26 @@ Playing with React and Material UI.
 - Content elements should be all Cards whenever possible.
 - Data display components (Avatar, Typography, List, etc ...) shouldn't be thrown inside a grid. It will break the positioning. Instead these should be wrapped into a content element.
 
+```js
+<Grid container className="Features" spacing={3}>
+  <Grid item xs={12}>
+    {/*
+		When a Typography is just thrown there the grid is broken
+		<Typography variant="h6" component="h3">
+		  Features
+		</Typography>
+	*/}
+    <Card>
+      <CardContent>
+        <Typography variant="h6" component="h3">
+          Features
+        </Typography>
+      </CardContent>
+    </Card>
+  </Grid>
+</Grid>
+```
+
 ## Responsiveness
 
 ### Inside `makeStyles`
