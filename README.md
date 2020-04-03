@@ -1,8 +1,10 @@
 # react-mui
 
-Playing with React and Material UI
+Playing with React and Material UI.
 
-## Set up
+## General guidelines
+
+### Set up
 
 - https://material-ui.com/components/css-baseline/
 
@@ -13,7 +15,7 @@ Playing with React and Material UI
 </>
 ```
 
-## Page containers
+### Page containers
 
 - https://spectrum.chat/material-ui/help/grid-vs-box-and-now-vs-container~73cef09f-1eb9-4d0f-a3a3-d46c44232524
 - https://material-ui.com/components/container/
@@ -22,13 +24,13 @@ Playing with React and Material UI
 <Container className="Home" maxWidth={false}>
 ```
 
-## Header / AppBar
+### Header / AppBar
 
 - Outside Material UI it's called Header
 - Material UI it calls AppBar
 - Let's be general and have a Header containing an AppBar
 
-### AppBar
+#### AppBar
 
 - https://material-ui.com/components/app-bar/
 - AppBar it's just a container of the `<header>` type. It needs to be filled with a Toolbar
@@ -44,19 +46,29 @@ Playing with React and Material UI
 </div>
 ```
 
-### Toolbar
+#### Toolbar
 
 - Toolbar is just a colored bar. It needs to be filled with a Menu, Search, Icons, Site title etc ...
 
-## Hero
+## Grid
 
-- It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
-- So it's ... a Card component
+- Every content element has to be wrapped into `<Grid item>` component.
+- Grid items (even a single one) has to be wrapped into a `<Grid container>` component
 
-## Features
+```js
+<Grid container className="Hero">
+  <Grid item xs={12}>
+	<Card className={classes.card}>
+	...
+  </Grid>
+</Grid>
+```
 
-- It's a list of components ... so Grid has to be used
-- Components resemble the features of a Card ... so they are Card components
+## Content
+
+- Content elements should be placed inside a grid item.
+- Content elements should be all Cards whenever possible.
+- Data display components (Avatar, Typography, List, etc ...) shouldn't be thrown inside a grid. It will break the positioning. Instead these should be wrapped into a content element.
 
 ## Responsiveness
 
@@ -118,3 +130,15 @@ const useStyles = makeStyles(theme => ({
 ### Outside `makeStyles`
 
 - MUI's own https://material-ui.com/components/use-media-query/#usemediaquery
+
+### Examples in this current project
+
+## Hero
+
+- It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
+- So it's ... a Card component
+
+## Features
+
+- It's a list of components ... so Grid has to be used
+- Components resemble the features of a Card ... so they are Card components
