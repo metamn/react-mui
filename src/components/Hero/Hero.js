@@ -12,6 +12,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import json2mq from "json2mq";
 
 import logo from "./logo512.png";
 
@@ -29,8 +31,19 @@ const defaultProps = {};
  * Styles the component
  */
 const useStyles = makeStyles({
+  card: {
+    display: "flex",
+    "& .landscape": {
+      alignItems: "center"
+    }
+  },
   media: {
-    height: 512
+    width: 512,
+    height: 512,
+    order: 2
+  },
+  content: {
+    order: 1
   }
 });
 
@@ -39,27 +52,37 @@ const useStyles = makeStyles({
  */
 const Hero = props => {
   const classes = useStyles();
+  const isPortrait = useMediaQuery(json2mq({ orientation: "portrait" }));
+  const orientation = isPortrait ? "portrait" : "landscape";
 
   return (
     <Grid container className="Hero">
-      <Grid item>
-        <Card className="Card">
-          <CardActionArea>
-            <CardMedia
-              className={classes.media}
-              image={logo}
-              title="Call to action"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Hero Headline
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                A short description goes here. Preferably 1-2 sentences only
-                which are short, precise and straight to the point
-              </Typography>
-            </CardContent>
-            <CardActions>
+      <Grid item xs={12}>
+        <Card className={`${classes.card} ${orientation}`}>
+          <CardMedia
+            className={classes.media}
+            image={logo}
+            title="Call to action"
+          />
+          <CardContent className={classes.content}>
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="h2"
+              className={classes.headline}
+            >
+              Hero Headline
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.description}
+            >
+              A short description goes here. Preferably 1-2 sentences only which
+              are short, precise and straight to the point
+            </Typography>
+            <CardActions className={classes.actions}>
               <Button size="small" color="primary">
                 Sign up
               </Button>
@@ -67,7 +90,7 @@ const Hero = props => {
                 Learn More
               </Button>
             </CardActions>
-          </CardActionArea>
+          </CardContent>
         </Card>
       </Grid>
     </Grid>
