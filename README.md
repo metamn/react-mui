@@ -27,12 +27,12 @@ Playing with React and Material UI.
 ### Grid
 
 - Grids are defining the page layout. Their usage is mandatory.
-- Every content element has to be wrapped into `<Grid item>` component.
+- Every element on the page has to be wrapped into `<Grid item>` component.
 - Grid items (even a single one) has to be wrapped into a `<Grid container>` component.
-- Spacing is set up once at container level
+- Spacing is set up once at container level. There is no spacing set at item level.
 
 ```js
-<Grid container className="Hero">
+<Grid container className="Hero" spacing={1}>
   <Grid item xs={12}>
 	<Card className={classes.card}>
 	...
@@ -42,15 +42,16 @@ Playing with React and Material UI.
 
 ### Content
 
-- Content elements should be placed inside a grid item.
+- There are many types of elements displayed on a page: content, navigation, input, notification, decoration and so.
+- Content elements are anything information: articles, descriptions, product plans, list of products, etc.
 - Content elements should be all Cards whenever possible.
-- Data display components (Avatar, Typography, List, etc ...) shouldn't be thrown inside a grid. It will break the positioning. Instead these should be wrapped into a content element.
+- Simple data display components (Avatar, Typography, List, Table etc ...) shouldn't be thrown inside a grid. They will break the positioning. Instead these elements should be wrapped into a content (Card) element.
 
 ```js
 <Grid container className="Features" spacing={3}>
   <Grid item xs={12}>
     {/*
-		When a Typography is just thrown there the grid is broken
+		When a Typography is just thrown there the grid will be broken
 		<Typography variant="h6" component="h3">
 		  Features
 		</Typography>
@@ -62,6 +63,7 @@ Playing with React and Material UI.
         </Typography>
       </CardContent>
     </Card>
+    {items}
   </Grid>
 </Grid>
 ```
@@ -79,17 +81,14 @@ Playing with React and Material UI.
 const useStyles = makeStyles(theme => ({
   dashboard: {
     "& .dashboardContentContainer": {
-      paddingLeft: theme.spacing(20),
-      paddingRight: theme.spacing(20),
-      overflow: "hidden",
+      ...
 
       [theme.breakpoints.down("lg")]: {
-        paddingLeft: theme.spacing(10),
-        paddingRight: theme.spacing(10)
+        ...
       },
+
       [theme.breakpoints.down("md")]: {
-        paddingLeft: theme.spacing(2),
-        paddingRight: theme.spacing(2)
+        ...
       }
     }
   }
