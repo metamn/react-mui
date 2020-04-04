@@ -24,36 +24,12 @@ Playing with React and Material UI.
 <Container className="Home" maxWidth={false}>
 ```
 
-### Header / AppBar
-
-- Outside Material UI it's called Header
-- Material UI it calls AppBar
-- Let's be general and have a Header containing an AppBar
-
-#### AppBar
-
-- https://material-ui.com/components/app-bar/
-- AppBar it's just a container of the `<header>` type. It needs to be filled with a Toolbar
-- AppBar position by default is `fixed` which is cumbersome. Let's change it to `static` or `relative`
-
-```js
-<div className="Header">
-  <AppBar position="static">
-    <Toolbar>
-      <Typography variant="h6">Home</Typography>
-    </Toolbar>
-  </AppBar>
-</div>
-```
-
-#### Toolbar
-
-- Toolbar is just a colored bar. It needs to be filled with a Menu, Search, Icons, Site title etc ...
-
 ### Grid
 
+- Grids are defining the page layout. Their usage is mandatory.
 - Every content element has to be wrapped into `<Grid item>` component.
-- Grid items (even a single one) has to be wrapped into a `<Grid container>` component
+- Grid items (even a single one) has to be wrapped into a `<Grid container>` component.
+- Spacing is set up once at container level
 
 ```js
 <Grid container className="Hero">
@@ -123,7 +99,7 @@ const useStyles = makeStyles(theme => ({
 ##### `react-responsive`
 
 - https://github.com/contra/react-responsive
-- src/hooks/useMedia/useMedia.js
+- https://github.com/metamn/react-mui/blob/master/src/hooks/useMedia/useMedia.js
 
 ```js
 const useStyles = makeStyles(theme => ({
@@ -155,6 +131,32 @@ const useStyles = makeStyles(theme => ({
 
 ## Examples in this current project
 
+### Header / AppBar
+
+- Outside Material UI it's called Header
+- Material UI calls it AppBar
+- Let's be general and have a Header containing an AppBar
+
+#### AppBar
+
+- https://material-ui.com/components/app-bar/
+- AppBar it's just a container of the `<header>` type. It needs to be filled with a Toolbar
+- AppBar position by default is `fixed` which is cumbersome. Let's change it to `static` or `relative`
+
+```js
+<div className="Header">
+  <AppBar position="static">
+    <Toolbar>
+      <Typography variant="h6">Home</Typography>
+    </Toolbar>
+  </AppBar>
+</div>
+```
+
+#### Toolbar
+
+- Toolbar is just a colored bar. It needs to be filled with a Menu, Search, Icons, Site title etc ...
+
 ### Hero
 
 - It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
@@ -163,4 +165,4 @@ const useStyles = makeStyles(theme => ({
 ### Features
 
 - It's a list of components ... so Grid has to be used
-- Components resemble the features of a Card ... so they are Card components
+- Components resemble the features of a Card (title, description, call to action) ... so they are Card components
