@@ -25,7 +25,7 @@ const Header = props => {
   return (
     <AppBar className="Header" position="static">
       <Toolbar>
-        <Grid container spacing={1}>
+        <Grid container spacing={1} alignItems="center">
           <Grid item>
             <Logo />
           </Grid>
