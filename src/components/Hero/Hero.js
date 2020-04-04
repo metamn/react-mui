@@ -78,8 +78,11 @@ const Hero = props => {
               component="p"
               className={classes.description}
             >
-              A short description goes here. Preferably 1-2 sentences only which
-              are short, precise and straight to the point
+              <p>A short description goes here.</p>
+              <p>
+                Preferably 1-2 sentences only which are precise and straight to
+                the point
+              </p>
             </Typography>
             <CardActions className={classes.actions}>
               <Button size="small" color="primary">

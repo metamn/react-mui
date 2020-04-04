@@ -17,6 +17,8 @@ Playing with React and Material UI.
 
 ### Page containers
 
+- Pages have to be wrapped into a <Container/>
+- ~~A Container can act also as a <Grid container />~~ but can't have its `spacing` set.
 - https://spectrum.chat/material-ui/help/grid-vs-box-and-now-vs-container~73cef09f-1eb9-4d0f-a3a3-d46c44232524
 - https://material-ui.com/components/container/
 
@@ -36,6 +38,22 @@ Playing with React and Material UI.
   <Grid item xs={12}>
 	<Card className={classes.card}>
 	...
+  </Grid>
+</Grid>
+```
+
+or
+
+```js
+<Grid container spacing={1}>
+  <Grid item xs={12}>
+    <Header />
+  </Grid>
+  <Grid item xs={12}>
+    <Hero />
+  </Grid>
+  <Grid item xs={12}>
+    <Features />
   </Grid>
 </Grid>
 ```
@@ -134,7 +152,7 @@ const useStyles = makeStyles(theme => ({
 
 - Outside Material UI it's called Header
 - Material UI calls it AppBar
-- Let's be general and have a Header containing an AppBar
+- Let's be general and have an AppBar with classname containing `Header`
 
 #### AppBar
 

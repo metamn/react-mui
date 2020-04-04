@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 });
 
 /**
- * Displays some items
+ * Displays a single item
  */
 const Item = props => {
   const { title } = props;
@@ -47,8 +47,11 @@ const Item = props => {
             {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            A short description goes here. Preferably 1-2 sentences only which
-            are short, precise and straight to the point
+            <p>A short description goes here.</p>
+            <p>
+              Preferably 1-2 sentences only which are precise and straight to
+              the point
+            </p>
           </Typography>
         </CardContent>
         <CardActions>

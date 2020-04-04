@@ -20,13 +20,11 @@ const defaultProps = {};
  */
 const Header = props => {
   return (
-    <div className="Header">
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">Home</Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar className="Header" position="static">
+      <Toolbar>
+        <Typography variant="h6">Home</Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 

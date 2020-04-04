@@ -6,6 +6,7 @@ import Hero from "../Hero";
 import Features from "../Features";
 
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 
 /**
  * Defines the prop types
@@ -23,9 +24,17 @@ const defaultProps = {};
 const Home = props => {
   return (
     <Container className="Home" maxWidth={false}>
-      <Header />
-      <Hero />
-      <Features />
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Header />
+        </Grid>
+        <Grid item xs={12}>
+          <Hero />
+        </Grid>
+        <Grid item xs={12}>
+          <Features />
+        </Grid>
+      </Grid>
     </Container>
   );
 };
