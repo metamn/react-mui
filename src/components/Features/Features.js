@@ -67,7 +67,7 @@ const Item = props => {
 const Features = props => {
   const classes = useStyles();
 
-  const range = [...Array(10).keys()];
+  const range = [...Array(6).keys()];
   const items = range.map(item => <Item title={`Feature ${item + 1}`} />);
 
   return (
