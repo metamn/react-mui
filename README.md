@@ -42,7 +42,8 @@ Playing with React and Material UI.
 </Grid>
 ```
 
-or
+- The grid is set up in the current component following the single responsibility principle.
+- In this example Header, Hero, Features are all aligned to the grid whatever their own component structure is
 
 ```js
 <Grid container spacing={1}>

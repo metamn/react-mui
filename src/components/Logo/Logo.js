@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Image from "material-ui-image";
 import logo from "./logo192.png";
 
-import Grid from "@material-ui/core/Grid";
 import { useTheme } from "@material-ui/core/styles";
 
 /**
@@ -32,11 +31,7 @@ const Logo = props => {
     backgroundColor: "transparent"
   };
 
-  return (
-    <Grid item className="Logo">
-      <Image src={logo} alt="Logo" style={style} />
-    </Grid>
-  );
+  return <Image src={logo} alt="Logo" style={style} className="Logo" />;
 };
 
 Logo.propTypes = propTypes;
