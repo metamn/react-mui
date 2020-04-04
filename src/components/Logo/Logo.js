@@ -28,12 +28,13 @@ const Logo = props => {
    */
   const style = {
     width: theme.mixins.toolbar.minHeight / 1.5,
-    height: theme.mixins.toolbar.minHeight / 1.5
+    height: theme.mixins.toolbar.minHeight / 1.5,
+    backgroundColor: "transparent"
   };
 
   return (
     <Grid item className="Logo">
-      <Image src={logo} alt="Logo" imageStyle={style} />
+      <Image src={logo} alt="Logo" style={style} />
     </Grid>
   );
 };
