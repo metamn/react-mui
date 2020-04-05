@@ -5,13 +5,13 @@ import shortid from "shortid";
 import Drawer from "@material-ui/core/Drawer";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import CloseIcon from "@material-ui/icons/Close";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import { useTheme, makeStyles } from "@material-ui/core/styles";
 
 /**
  * Defines the prop types
@@ -24,67 +24,11 @@ const propTypes = {};
 const defaultProps = {};
 
 /**
- * Define the drawer's width
- */
-const drawerWidth = 240;
-
-/**
- * Stye the component
+ * Styles the component
  */
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex"
-  },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    }),
-    marginRight: drawerWidth
-  },
-  title: {
-    flexGrow: 1
-  },
-  hide: {
-    display: "none"
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0
-  },
-  drawerPaper: {
-    width: drawerWidth
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-start"
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-    marginRight: -drawerWidth
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    }),
-    marginRight: 0
+  container: {
+    minHeight: theme.mixins.toolbar["@media (min-width:600px)"].minHeight
   }
 }));
 
@@ -94,8 +38,8 @@ const useStyles = makeStyles(theme => ({
 const MenuVertical = props => {
   const { items } = props;
 
-  const classes = useStyles();
   const theme = useTheme();
+  const classes = useStyles(theme);
 
   const [open, setOpen] = useState(false);
 
@@ -118,10 +62,17 @@ const MenuVertical = props => {
       <IconButton edge="end" color="inherit" onClick={handleDrawerOpen}>
         <MenuIcon />
       </IconButton>
-      <Drawer variant="persistent" anchor="right" open={open}>
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronRightIcon />
-        </IconButton>
+      <Drawer anchor="right" open={open}>
+        <Grid
+          container
+          justify="flex-end"
+          alignItems="center"
+          className={classes.container}
+        >
+          <IconButton onClick={handleDrawerClose}>
+            <CloseIcon />
+          </IconButton>
+        </Grid>
         <List>{list}</List>
       </Drawer>
     </>
