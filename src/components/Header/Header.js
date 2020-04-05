@@ -33,9 +33,13 @@ const Header = props => {
           <Grid item>
             <Typography variant="h6">Home</Typography>
           </Grid>
-          <Grid item>
-            <Menu />
-          </Grid>
+          {/*
+			  When wrapped into a Grid item the horizontal menu's autoscroller get broken
+			  <Grid item>
+	            <Menu/>
+	          </Grid>
+		  */}
+          <Menu />
         </Grid>
       </Toolbar>
     </AppBar>
