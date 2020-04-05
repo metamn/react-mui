@@ -155,29 +155,27 @@ const isPortrait = useMediaQuery("(orientation: portrait)");
 
 ### Header / AppBar
 
+- https://material-ui.com/components/app-bar/
 - Outside Material UI it's called Header
 - Material UI calls it AppBar
-- Let's be general and have an AppBar with classname containing `Header`
-
-#### AppBar
-
-- https://material-ui.com/components/app-bar/
+- Let's be general and have a Header component featuring an AppBar
 - AppBar it's just a container of the `<header>` type. It needs to be filled with a Toolbar
 - AppBar position by default is `fixed` which is cumbersome. Let's change it to `static` or `relative`
 
 ```js
-<div className="Header">
-  <AppBar position="static">
-    <Toolbar>
-      <Typography variant="h6">Home</Typography>
-    </Toolbar>
-  </AppBar>
-</div>
+<AppBar className="Header" position="static">
+  <Toolbar>...</Toolbar>
+</AppBar>
 ```
 
-#### Toolbar
+### Toolbar
 
 - Toolbar is just a colored bar. It needs to be filled with a Menu, Search, Icons, Site title etc ...
+
+### Menu
+
+- In portrait mode: hamburger menu / Drawer
+- In landscape mode: Tabs, scrolling
 
 ### Hero
 
