@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Logo from "../Logo";
+import Menu from "../Menu";
 
 import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
@@ -31,6 +32,9 @@ const Header = props => {
           </Grid>
           <Grid item>
             <Typography variant="h6">Home</Typography>
+          </Grid>
+          <Grid item>
+            <Menu />
           </Grid>
         </Grid>
       </Toolbar>
