@@ -45,6 +45,10 @@ const useStyles = makeStyles({
     [`${Media.landscape}`]: {
       order: 2
     }
+  },
+  contentAndAction: {
+    display: "flex",
+    flexDirection: "column"
   }
 });
 
@@ -63,36 +67,25 @@ const Hero = props => {
             image={logo}
             title="Call to action"
           />
-          <CardContent className={classes.content}>
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="h2"
-              className={classes.headline}
-            >
-              Hero Headline
-            </Typography>
-            <Typography
-              variant="body2"
-              color="textSecondary"
-              component="div"
-              className={classes.description}
-            >
-              <p>A short description goes here.</p>
-              <p>
-                Preferably 1-2 sentences only which are precise and straight to
-                the point
-              </p>
-            </Typography>
-            <CardActions className={classes.actions}>
-              <Button size="small" color="primary">
+          <div className={classes.contentAndAction}>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Hero Headline
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="div">
+                <p>A short description goes here.</p>
+                <p>
+                  Preferably 1-2 sentences only which are precise and straight
+                  to the point
+                </p>
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant="contained" color="primary">
                 Sign up
               </Button>
-              <Button size="small" color="primary">
-                Learn More
-              </Button>
             </CardActions>
-          </CardContent>
+          </div>
         </Card>
       </Grid>
     </Grid>
