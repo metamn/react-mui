@@ -75,7 +75,7 @@ const Hero = props => {
             <Typography
               variant="body2"
               color="textSecondary"
-              component="p"
+              component="div"
               className={classes.description}
             >
               <p>A short description goes here.</p>

@@ -147,6 +147,10 @@ const useStyles = makeStyles(theme => ({
 
 - MUI's own https://material-ui.com/components/use-media-query/#usemediaquery
 
+```js
+const isPortrait = useMediaQuery("(orientation: portrait)");
+```
+
 ## Examples in this current project
 
 ### Header / AppBar

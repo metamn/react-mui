@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import MenuHorizontal from "../MenuHorizontal";
+import MenuVertical from "../MenuVertical";
+
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
 /**
  * Defines the prop types
  */
@@ -12,14 +17,29 @@ const propTypes = {
  * Defines the default props
  */
 const defaultProps = {
-  items: ["Item one", "Item two", "Item three", "Item four", "Item five"]
+  items: [
+    "Item one",
+    "Item two",
+    "Item three",
+    "Item four",
+    "Item five",
+    "Item six",
+    "Item seven, the last one"
+  ]
 };
 
 /**
  * Displays the component
  */
 const Menu = props => {
-  return <div className="Menu">Menu</div>;
+  const { items } = props;
+  const isPortrait = useMediaQuery("(orientation: portrait)");
+
+  return isPortrait ? (
+    <MenuVertical items={items} />
+  ) : (
+    <MenuHorizontal items={items} />
+  );
 };
 
 Menu.propTypes = propTypes;

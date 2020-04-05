@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import shortid from "shortid";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -46,7 +47,7 @@ const Item = props => {
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary" component="div">
             <p>A short description goes here.</p>
             <p>
               Preferably 1-2 sentences only which are precise and straight to
@@ -71,7 +72,9 @@ const Features = props => {
   const classes = useStyles();
 
   const range = [...Array(6).keys()];
-  const items = range.map(item => <Item title={`Feature ${item + 1}`} />);
+  const items = range.map(item => (
+    <Item key={shortid.generate()} title={`Feature ${item + 1}`} />
+  ));
 
   return (
     <Grid container className="Features" spacing={3}>
