@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Media } from "./../../hooks";
+
 import Logo from "../Logo";
 import Menu from "../Menu";
 
@@ -8,6 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
 
 /**
  * Defines the prop types
@@ -20,9 +23,22 @@ const propTypes = {};
 const defaultProps = {};
 
 /**
+ * Styles the component
+ */
+const useStyles = makeStyles({
+  container: {
+    [`${Media.portrait}`]: {
+      justifyContent: "space-between"
+    }
+  }
+});
+
+/**
  * Displays the component
  */
 const Header = props => {
+  const classes = useStyles();
+
   return (
     <AppBar className="Header" position="static">
       <Toolbar>
@@ -31,7 +47,7 @@ const Header = props => {
           spacing={1}
           alignItems="center"
           wrap="nowrap"
-          justify="space-between" // Needed for the mobile menu
+          className={classes.container}
         >
           <Grid item>
             <Logo />
