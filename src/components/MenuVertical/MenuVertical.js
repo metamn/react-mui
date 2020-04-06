@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
  * Displays the component
  */
 const MenuVertical = props => {
-  const { items } = props;
+  const { items, currentPage } = props;
 
   const theme = useTheme();
   const classes = useStyles(theme);
@@ -52,7 +52,7 @@ const MenuVertical = props => {
   };
 
   const list = items.map(item => (
-    <ListItem button key={shortid.generate()}>
+    <ListItem button selected={item === currentPage} key={shortid.generate()}>
       <ListItemText primary={item} />
     </ListItem>
   ));
