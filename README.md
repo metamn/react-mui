@@ -21,6 +21,8 @@ A minimalist approach can reduce all above problems and offer a _best practices_
 
 Design Systems are meant to replace HTML and CSS written by hand. If your code code contains handwritten CSS then it should be refactored until all CSS code is simplified down to responsiveness.
 
+It's rather adjust the Design System once (globally, by customizing the theme) than overwrite it many times (locally, adding custom CSS - exceptions - in components).
+
 ## Guidelines
 
 ### Set up
