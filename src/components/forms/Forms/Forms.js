@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Header from "../Header";
+import Header from "../../Header";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";

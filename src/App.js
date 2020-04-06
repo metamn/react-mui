@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from "./components/Home";
-import Forms from "./components/Forms";
-import Theming from "./components/Theming";
+import Home from "./components/home/Home";
+import Forms from "./components/forms/Forms";
+import Theming from "./components/theming/Theming";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 
