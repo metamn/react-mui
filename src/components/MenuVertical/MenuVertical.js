@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import shortid from "shortid";
+import { Link } from "react-router-dom";
+
+import { convertMenuToRoute } from "../Menu";
 
 import Drawer from "@material-ui/core/Drawer";
 import IconButton from "@material-ui/core/IconButton";
@@ -52,7 +55,13 @@ const MenuVertical = props => {
   };
 
   const list = items.map(item => (
-    <ListItem button selected={item === currentPage} key={shortid.generate()}>
+    <ListItem
+      button
+      selected={item === currentPage}
+      key={shortid.generate()}
+      component={Link}
+      to={convertMenuToRoute(item)}
+    >
       <ListItemText primary={item} />
     </ListItem>
   ));

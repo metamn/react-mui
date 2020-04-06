@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import shortid from "shortid";
-
 import { Link } from "react-router-dom";
+
+import { convertMenuToRoute } from "../Menu";
 
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -24,8 +25,14 @@ const MenuHorizontal = props => {
   const { items, currentPage } = props;
 
   const tabs = items.map(item => (
-    <Tab key={shortid.generate()} label={item} component={Link} to="/forms" />
+    <Tab
+      key={shortid.generate()}
+      label={item}
+      component={Link}
+      to={convertMenuToRoute(item)}
+    />
   ));
+
   const value = items.findIndex(item => item === currentPage);
 
   return (

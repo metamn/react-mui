@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
 
 import MenuHorizontal from "../MenuHorizontal";
 import MenuVertical from "../MenuVertical";
@@ -31,6 +32,13 @@ const defaultProps = {
 };
 
 /**
+ * Converts a menu name to a route
+ */
+const convertMenuToRoute = menu => {
+  return menu === "Home" ? "/" : `/${kebabCase(menu)}`;
+};
+
+/**
  * Displays the component
  */
 const Menu = props => {
@@ -47,4 +55,8 @@ Menu.propTypes = propTypes;
 Menu.defaultProps = defaultProps;
 
 export default Menu;
-export { propTypes as MenuPropTypes, defaultProps as MenuDefaultProps };
+export {
+  propTypes as MenuPropTypes,
+  defaultProps as MenuDefaultProps,
+  convertMenuToRoute
+};

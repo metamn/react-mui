@@ -1,1 +1,6 @@
-export { default, MenuPropTypes, MenuDefaultProps } from "./Menu";
+export {
+  default,
+  MenuPropTypes,
+  MenuDefaultProps,
+  convertMenuToRoute
+} from "./Menu";
