@@ -2,6 +2,10 @@
 
 Playing with React and Material UI.
 
+## Status
+
+This is a work in progress document. Just fyi ... don't take actions yet based on it.
+
 ## Summary
 
 ### 1. Use as less MUI components as possible
@@ -47,8 +51,9 @@ It's rather adjust the Design System once (globally, by customizing the theme) t
 <Container className="Home" maxWidth={false}>
 ```
 
-### Grid
+### Page layout
 
+- https://material-ui.com/components/grid/#grid
 - Grids are defining the page layout. Their usage is mandatory.
 - Every element on the page has to be wrapped into `<Grid item>` component.
 - Grid items (even a single one) has to be wrapped into a Grid container component.
@@ -83,8 +88,8 @@ It's rather adjust the Design System once (globally, by customizing the theme) t
 
 ### Content
 
-- There are many types of elements which can be displayed on a webpage: content, navigation, input, notification, decoration and so.
-- Content elements are anything information: articles, descriptions, product plans, list of products, etc.
+- There are many types of elements which can be displayed on a webpage: content, navigation, inputs (forms), notifications, decorations (icons, background images, ...) and so.
+- Content elements are anything information: articles, descriptions, product plans, list of products, etc. - Usually what we fetch from the API / database.
 - Content elements should be all Cards whenever possible.
 - Simple data display components (Avatar, Typography, List, Table etc ...) shouldn't be thrown inside a grid. They will break the positioning. Instead these elements should be wrapped into a content (Card) element.
 
