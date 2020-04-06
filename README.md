@@ -36,8 +36,8 @@ Design Systems are meant to replace HTML and CSS written by hand. If your code c
 
 ### Page containers
 
-- Pages have to be wrapped into a <Container/>
-- ~~A Container can act also as a <Grid container />~~ but can't have its `spacing` set.
+- Pages have to be wrapped into a Container
+- ~~A Container can act also as a Grid container~~ but can't have its `spacing` set.
 - https://spectrum.chat/material-ui/help/grid-vs-box-and-now-vs-container~73cef09f-1eb9-4d0f-a3a3-d46c44232524
 - https://material-ui.com/components/container/
 
@@ -49,7 +49,7 @@ Design Systems are meant to replace HTML and CSS written by hand. If your code c
 
 - Grids are defining the page layout. Their usage is mandatory.
 - Every element on the page has to be wrapped into `<Grid item>` component.
-- Grid items (even a single one) has to be wrapped into a `<Grid container>` component.
+- Grid items (even a single one) has to be wrapped into a Grid container component.
 - Spacing is set up once at container level. There is no spacing set at item level.
 
 ```js
