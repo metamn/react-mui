@@ -61,7 +61,7 @@ Design Systems are meant to replace HTML and CSS written by hand. If your code c
 </Grid>
 ```
 
-- The grid is set up in the current / parent component following the single responsibility principle.
+- The grid is set up in the current / parent / container component following the single responsibility principle.
 - Child components have no responsibility to align themselves to their parents and siblings. The parent container has to set up the grid, alone.
 - In this example Header, Hero, Features are all aligned to the grid even if they don't have any Grid components inside.
 
@@ -81,7 +81,7 @@ Design Systems are meant to replace HTML and CSS written by hand. If your code c
 
 ### Content
 
-- There are many types of elements displayed on a page: content, navigation, input, notification, decoration and so.
+- There are many types of elements which can be displayed on a webpage: content, navigation, input, notification, decoration and so.
 - Content elements are anything information: articles, descriptions, product plans, list of products, etc.
 - Content elements should be all Cards whenever possible.
 - Simple data display components (Avatar, Typography, List, Table etc ...) shouldn't be thrown inside a grid. They will break the positioning. Instead these elements should be wrapped into a content (Card) element.
@@ -190,19 +190,22 @@ const isPortrait = useMediaQuery("(orientation: portrait)");
 
 ### Toolbar
 
+- https://material-ui.com/api/toolbar/
 - Toolbar is just a colored bar. It needs to be filled with a Menu, Search, Icons, Site title etc ...
 
 ### Menu
 
-- In portrait mode: hamburger menu / Drawer
-- In landscape mode: Tabs, with scrolling tab headers on large number of menu items
+- In portrait mode: hamburger menu / Drawer: https://material-ui.com/components/drawers/#drawer
+- In landscape mode: Tabs, with scrolling tab headers on large number of menu items: https://material-ui.com/components/tabs/#tabs
 
 ### Hero
 
+- https://material-ui.com/components/cards/#card
 - It's the first _slide_ describing the product / service with a headline, a short description and an image. And usually offers a call to action button.
 - So it's ... a Card component
 
 ### Features
 
+- https://material-ui.com/components/cards/#card
 - It's a list of components ... so Grid has to be used
 - Components resemble the features of a Card (title, description, call to action) ... so they are Card components
