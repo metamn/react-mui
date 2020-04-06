@@ -61,8 +61,9 @@ Design Systems are meant to replace HTML and CSS written by hand. If your code c
 </Grid>
 ```
 
-- The grid is set up in the current component following the single responsibility principle.
-- In this example Header, Hero, Features are all aligned to the grid whatever their own component structure is
+- The grid is set up in the current / parent component following the single responsibility principle.
+- Child components have no responsibility to align themselves to their parents and siblings. The parent container has to set up the grid, alone.
+- In this example Header, Hero, Features are all aligned to the grid even if they don't have any Grid components inside.
 
 ```js
 <Grid container spacing={1}>
