@@ -69,7 +69,7 @@ const Hero = props => {
           <CardMedia
             className={classes.media}
             image={logo}
-            title="Call to action"
+            title="React + Material UI"
           />
           <div className={classes.contentAndAction}>
             <CardContent>
@@ -77,10 +77,8 @@ const Hero = props => {
                 React + Material UI
               </Typography>
               <Typography variant="body1">
-                <p>A best practices guide.</p>
-                <p>
-                  For team members looking to write easy and uniform MUI code.
-                </p>
+                A best practices guide. For teams looking to write easy and
+                uniform Material UI code.
               </Typography>
             </CardContent>
             <CardActions>
