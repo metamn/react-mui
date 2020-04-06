@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Media } from "./../../hooks";
 
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -29,7 +29,7 @@ const defaultProps = {};
 /**
  * Styles the component
  */
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   card: {
     display: "flex",
     [`${Media.portrait}`]: {
@@ -40,23 +40,27 @@ const useStyles = makeStyles({
     }
   },
   media: {
-    width: 512,
-    height: 512,
+    minWidth: 512,
+    minHeight: 512,
     [`${Media.landscape}`]: {
       order: 2
     }
   },
-  contentAndAction: {
+  contentAndAction: theme => ({
     display: "flex",
-    flexDirection: "column"
-  }
-});
+    flexDirection: "column",
+    [`${Media.portrait}`]: {
+      paddingBottom: theme.spacing(4)
+    }
+  })
+}));
 
 /**
  * Displays the component
  */
 const Hero = props => {
-  const classes = useStyles();
+  const theme = useTheme();
+  const classes = useStyles(theme);
 
   return (
     <Grid container className="Hero">
@@ -80,8 +84,12 @@ const Hero = props => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button variant="contained" color="primary">
-                Learn more
+              <Button
+                variant="contained"
+                color="primary"
+                href="https://github.com/metamn/react-mui"
+              >
+                Check the code on Github
               </Button>
             </CardActions>
           </div>
