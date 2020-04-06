@@ -2,6 +2,25 @@
 
 Playing with React and Material UI.
 
+## Summary
+
+### 1. Use as less MUI components as possible
+
+- For content, Grid and Card should be well enough
+- For special elements like Navigation, Forms you'll find the examples here. (Or ask if they are missing)
+
+MUI is the most popular Design System out there. Yet it has to be used with care.
+
+Component functionality might easily overlap; the layout can be easily broken; code can become more complicated than necessary; and so on.
+
+A minimalist approach can reduce all above problems and offer a _best practices_ approach like we have for React.
+
+### 2. Don't write CSS by hand
+
+- Use `makeStyles` only when adding responsiveness
+
+Design Systems are meant to replace HTML and CSS written by hand. If your code code contains handwritten CSS then it should be refactored until all CSS code is simplified down to responsiveness.
+
 ## General guidelines
 
 ### Set up
@@ -175,7 +194,7 @@ const isPortrait = useMediaQuery("(orientation: portrait)");
 ### Menu
 
 - In portrait mode: hamburger menu / Drawer
-- In landscape mode: Tabs, scrolling
+- In landscape mode: Tabs, with scrolling tab headers on large number of menu items
 
 ### Hero
 
