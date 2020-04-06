@@ -1,5 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+import Header from "../../Header";
+
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -18,9 +24,11 @@ const propTypes = {};
 const defaultProps = {};
 
 /**
- * Displays the component
+ * Displays the component as a Card
  */
-const Controlled = props => {
+const ControlledAsCard = props => {
+  const { url } = props;
+
   return (
     <Card className="Controlled">
       <CardContent>
@@ -35,11 +43,31 @@ const Controlled = props => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          size="small"
+          color="primary"
+          component={Link}
+          to={`${url}/controlled`}
+        >
           Learn More
         </Button>
       </CardActions>
     </Card>
+  );
+};
+
+/**
+ * Displays the component
+ */
+const Controlled = props => {
+  return (
+    <Container className="Controlled" maxWidth={false}>
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Header currentPage="Forms" />
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
@@ -49,5 +77,6 @@ Controlled.defaultProps = defaultProps;
 export default Controlled;
 export {
   propTypes as ControlledPropTypes,
-  defaultProps as ControlledDefaultProps
+  defaultProps as ControlledDefaultProps,
+  ControlledAsCard
 };
