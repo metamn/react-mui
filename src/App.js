@@ -1,14 +1,25 @@
 import React from "react";
-
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./components/Home";
+import Forms from "./components/Forms";
+
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 const App = () => {
   return (
     <>
       <CssBaseline />
-      <Home />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/forms">
+            <Forms />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 };
