@@ -21,7 +21,7 @@ A minimalist approach can reduce all above problems and offer a _best practices_
 
 Design Systems are meant to replace HTML and CSS written by hand. If your code code contains handwritten CSS then it should be refactored until all CSS code is simplified down to responsiveness.
 
-## General guidelines
+## Guidelines
 
 ### Set up
 
@@ -170,7 +170,7 @@ const useStyles = makeStyles(theme => ({
 const isPortrait = useMediaQuery("(orientation: portrait)");
 ```
 
-## Examples in this current project
+## In this project
 
 ### Header / AppBar
 
