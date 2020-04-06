@@ -6,7 +6,7 @@ Playing with React and Material UI.
 
 ### 1. Use as less MUI components as possible
 
-- For content, Grid and Card should be well enough
+- For content, Grid and Card should be well enough. Try to avoid Paper, Box.
 - For special elements like Navigation, Forms you'll find the examples here. (Or ask if they are missing)
 
 MUI is the most popular Design System out there. Yet it has to be used with care.
