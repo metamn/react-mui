@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./components/Home";
 import Forms from "./components/Forms";
+import Theming from "./components/Theming";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -17,6 +18,9 @@ const App = () => {
           </Route>
           <Route path="/forms">
             <Forms />
+          </Route>
+          <Route path="/theming">
+            <Theming />
           </Route>
         </Switch>
       </Router>

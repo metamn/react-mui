@@ -22,7 +22,7 @@ const defaultProps = {
   items: [
     "Home",
     "Forms",
-    "Item three",
+    "Theming",
     "Item four",
     "Item five",
     "Item six",
