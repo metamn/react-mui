@@ -26,7 +26,7 @@ const Home = props => {
     <Container className="Home" maxWidth={false}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Header />
+          <Header currentPage="Home" />
         </Grid>
         <Grid item xs={12}>
           <Hero />

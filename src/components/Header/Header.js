@@ -30,6 +30,17 @@ const useStyles = makeStyles({
     [`${Media.portrait}`]: {
       justifyContent: "space-between"
     }
+  },
+  title: {
+    [`${Media.portrait}`]: {
+      display: "flex",
+      justifyContent: "center"
+    }
+  },
+  pageTitle: {
+    [`${Media.landscape}`]: {
+      display: "none"
+    }
   }
 });
 
@@ -37,6 +48,7 @@ const useStyles = makeStyles({
  * Displays the component
  */
 const Header = props => {
+  const { currentPage } = props;
   const classes = useStyles();
 
   return (
@@ -52,8 +64,11 @@ const Header = props => {
           <Grid item>
             <Logo />
           </Grid>
-          <Grid item>
-            <Typography variant="h6">Home</Typography>
+          <Grid item className={classes.title}>
+            <Typography variant="h6">MUI</Typography>
+            <Typography variant="h6" className={classes.pageTitle}>
+              &nbsp;&mdash;&nbsp;{currentPage}
+            </Typography>
           </Grid>
           {/*
 			  When wrapped into a Grid item the horizontal menu's autoscroller gets broken
@@ -61,7 +76,7 @@ const Header = props => {
 	            <Menu/>
 	          </Grid>
 		  */}
-          <Menu />
+          <Menu currentPage={currentPage} />
         </Grid>
       </Toolbar>
     </AppBar>

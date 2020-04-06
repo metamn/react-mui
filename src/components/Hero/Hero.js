@@ -69,20 +69,19 @@ const Hero = props => {
           />
           <div className={classes.contentAndAction}>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Hero Headline
+              <Typography gutterBottom variant="h3">
+                React + Material UI
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="div">
-                <p>A short description goes here.</p>
+              <Typography variant="body1">
+                <p>A best practices guide.</p>
                 <p>
-                  Preferably 1-2 sentences only which are precise and straight
-                  to the point
+                  For team members looking to write easy and uniform MUI code.
                 </p>
               </Typography>
             </CardContent>
             <CardActions>
               <Button variant="contained" color="primary">
-                Sign up
+                Learn more
               </Button>
             </CardActions>
           </div>

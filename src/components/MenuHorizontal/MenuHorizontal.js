@@ -19,13 +19,15 @@ const defaultProps = {};
  * Displays the component
  */
 const MenuHorizontal = props => {
-  const { items } = props;
+  const { items, currentPage } = props;
+
   const tabs = items.map(item => <Tab key={shortid.generate()} label={item} />);
+  const value = items.findIndex(item => item === currentPage);
 
   return (
     <Tabs
       className="MenuHorizontal"
-      value={false}
+      value={value}
       variant="scrollable"
       scrollButtons="on"
     >

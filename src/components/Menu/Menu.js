@@ -10,7 +10,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
  * Defines the prop types
  */
 const propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string)
+  items: PropTypes.arrayOf(PropTypes.string),
+  currentPage: PropTypes.string
 };
 
 /**
@@ -18,27 +19,27 @@ const propTypes = {
  */
 const defaultProps = {
   items: [
-    "Item one",
-    "Item two",
+    "Home",
+    "Forms",
     "Item three",
     "Item four",
     "Item five",
     "Item six",
     "Item seven, the last one"
-  ]
+  ],
+  currentPage: "Home"
 };
 
 /**
  * Displays the component
  */
 const Menu = props => {
-  const { items } = props;
   const isPortrait = useMediaQuery("(orientation: portrait)");
 
   return isPortrait ? (
-    <MenuVertical items={items} />
+    <MenuVertical {...props} />
   ) : (
-    <MenuHorizontal items={items} />
+    <MenuHorizontal {...props} />
   );
 };
 
