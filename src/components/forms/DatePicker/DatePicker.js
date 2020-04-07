@@ -11,6 +11,10 @@ import FormControl from "@material-ui/core/FormControl";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
+/**
+ * Check package.json for the required packages.
+ * - The installation instructions aren't working at this momemnt
+ */
 import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
@@ -98,9 +102,16 @@ const DatePicker = props => {
         <Button
           size="small"
           color="primary"
-          href="https://github.com/metamn/react-mui/blob/master/src/components/forms/Checkbox/Checkbox.js"
+          href="https://github.com/metamn/react-mui/blob/master/src/components/forms/DatePicker/DatePicker.js"
         >
-          See code // https://material-ui-pickers.dev/
+          See code
+        </Button>
+        <Button
+          size="small"
+          color="primary"
+          href="https://material-ui-pickers.dev/"
+        >
+          See the library
         </Button>
       </CardActions>
     </Card>
