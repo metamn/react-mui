@@ -7,6 +7,7 @@ import Breadcrumbs from "../../Breadcrumbs";
 import TextField from "../TextField";
 import TextFieldThrottled from "../TextFieldThrottled";
 import Checkbox from "../Checkbox";
+import DatePicker from "../DatePicker";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -98,6 +99,9 @@ const Controlled = props => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Checkbox />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <DatePicker />
         </Grid>
       </Grid>
     </Container>
