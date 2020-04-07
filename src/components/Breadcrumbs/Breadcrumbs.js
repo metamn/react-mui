@@ -6,6 +6,8 @@ import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { Breadcrumbs as MUIBreadcrumbs } from "@material-ui/core";
 import Link from "@material-ui/core/Link";
 import { Link as RouterLink } from "react-router-dom";
+import Paper from "@material-ui/core/Paper";
+import Box from "@material-ui/core/Box";
 
 /**
  * Defines the prop types
@@ -40,7 +42,13 @@ const Breadcrumbs = props => {
     );
   });
 
-  return <MUIBreadcrumbs className="Breadcrumbs">{links}</MUIBreadcrumbs>;
+  return (
+    <Paper>
+      <Box padding={3}>
+        <MUIBreadcrumbs className="Breadcrumbs">{links}</MUIBreadcrumbs>
+      </Box>
+    </Paper>
+  );
 };
 
 Breadcrumbs.propTypes = propTypes;
