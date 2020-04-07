@@ -8,6 +8,7 @@ import TextField from "../TextField";
 import TextFieldThrottled from "../TextFieldThrottled";
 import Checkbox from "../Checkbox";
 import DatePicker from "../DatePicker";
+import SelectMultipleAutocomplete from "../SelectMultipleAutocomplete";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -58,7 +59,7 @@ const ControlledAsCard = props => {
 const Controlled = props => {
   return (
     <Container className="Controlled" maxWidth="lg">
-      <Grid container spacing={1}>
+      <Grid container spacing={3}>
         <Grid item xs={12}>
           <Header currentPage="Forms" />
         </Grid>
@@ -102,6 +103,9 @@ const Controlled = props => {
         </Grid>
         <Grid item xs={12} md={6}>
           <DatePicker />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <SelectMultipleAutocomplete />
         </Grid>
       </Grid>
     </Container>
