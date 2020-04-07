@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import shortid from "shortid";
 import { capitalize } from "lodash";
 
-import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
@@ -52,8 +51,6 @@ const useStyles = makeStyles(theme => ({
  */
 const Checkbox = props => {
   const { values, checked: defaultChecked } = props;
-
-  const classes = useStyles();
 
   /**
    * Handles the checkbox states
@@ -111,8 +108,10 @@ const Checkbox = props => {
           </Grid>
           <Grid item xs={12}>
             <Typography variant="body2" color="textSecondary" component="div">
-              <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend">Please check items</FormLabel>
+              <FormControl component="fieldset">
+                <FormLabel component="legend">
+                  Please check / uncheck items
+                </FormLabel>
                 <FormGroup>{items}</FormGroup>
               </FormControl>
             </Typography>
