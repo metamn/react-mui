@@ -11,9 +11,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 
@@ -37,7 +35,9 @@ const ControlledAsCard = props => {
     <Card className="ControlledAsCard">
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          Controlled forms
+          <Link component={RouterLink} to={`${url}/controlled`}>
+            Controlled forms
+          </Link>
         </Typography>
         <Typography variant="body2" color="textSecondary" component="div">
           <p>
@@ -46,16 +46,6 @@ const ControlledAsCard = props => {
           <p>It's the recommended way to deal with forms.</p>
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button
-          size="small"
-          color="primary"
-          component={RouterLink}
-          to={`${url}/controlled`}
-        >
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   );
 };
