@@ -6,6 +6,7 @@ import Header from "../../Header";
 import Breadcrumbs from "../../Breadcrumbs";
 import TextField from "../TextField";
 import TextFieldThrottled from "../TextFieldThrottled";
+import Checkbox from "../Checkbox";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -94,6 +95,9 @@ const Controlled = props => {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextFieldThrottled />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Checkbox />
         </Grid>
       </Grid>
     </Container>
