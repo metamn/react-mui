@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import Header from "../../Header";
+import Breadcrumbs from "../../Breadcrumbs";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -65,6 +66,9 @@ const Controlled = props => {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Header currentPage="Forms" />
+        </Grid>
+        <Grid item xs={12}>
+          <Breadcrumbs />
         </Grid>
       </Grid>
     </Container>
