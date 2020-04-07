@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 import Header from "../../Header";
 import Breadcrumbs from "../../Breadcrumbs";
@@ -13,6 +13,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 
 /**
  * Defines the prop types
@@ -47,7 +48,7 @@ const ControlledAsCard = props => {
         <Button
           size="small"
           color="primary"
-          component={Link}
+          component={RouterLink}
           to={`${url}/controlled`}
         >
           Learn More
@@ -75,11 +76,19 @@ const Controlled = props => {
             <CardContent>
               <Typography variant="h4">Controlled forms</Typography>
               <Typography variant="body1">
-                <p>
-                  React holds the state of the form inputs and controls their
-                  change.
-                </p>
-                <p>It's the recommended way to deal with forms.</p>
+                <ul>
+                  <li>
+                    React holds the state of the form inputs and controls their
+                    change.
+                  </li>
+                  <li>It's the recommended way to deal with forms.</li>
+                  <li>
+                    See{" "}
+                    <Link href="https://reactjs.org/docs/forms.html#controlled-components">
+                      the official React documentation
+                    </Link>
+                  </li>
+                </ul>
               </Typography>
             </CardContent>
           </Card>
