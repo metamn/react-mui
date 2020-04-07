@@ -4,6 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 import Header from "../../Header";
 import Breadcrumbs from "../../Breadcrumbs";
+import TextField from "../TextField";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -90,8 +91,15 @@ const Controlled = props => {
                   </li>
                 </ul>
               </Typography>
+              <Typography variant="body1">
+                Please find below the controlled implementation of a few common
+                Material UI input types.
+              </Typography>
             </CardContent>
           </Card>
+        </Grid>
+        <Grid item xs={12}>
+          <TextField />
         </Grid>
       </Grid>
     </Container>
