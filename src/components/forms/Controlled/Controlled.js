@@ -31,7 +31,7 @@ const ControlledAsCard = props => {
   const { url } = props;
 
   return (
-    <Card className="Controlled">
+    <Card className="ControlledAsCard">
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           Controlled forms
@@ -69,6 +69,20 @@ const Controlled = props => {
         </Grid>
         <Grid item xs={12}>
           <Breadcrumbs />
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Typography variant="h4">Controlled forms</Typography>
+              <Typography variant="body1">
+                <p>
+                  React holds the state of the form inputs and controls their
+                  change.
+                </p>
+                <p>It's the recommended way to deal with forms.</p>
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
       </Grid>
     </Container>
