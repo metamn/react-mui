@@ -12,6 +12,10 @@ import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
 import FormControl from "@material-ui/core/FormControl";
+/**
+ * Check package.json for the right packages
+ * - The default install won't work
+ */
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
 import Chip from "@material-ui/core/Chip";
@@ -232,7 +236,7 @@ const SelectMultipleAutocomplete = props => {
    * Handles the select change
    */
   const selectHandler = (event, value) => {
-    const values = value.map(item => item.val);
+    const values = value.map(item => item);
     const lastValue = values.pop();
     const bugFixedValues = [...selected, lastValue];
 
@@ -243,13 +247,14 @@ const SelectMultipleAutocomplete = props => {
     <Card className="SelectMultipleAutocomplete">
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          SelectMultipleAutocomplete
+          Select Multiple Autocomplete
         </Typography>
 
         <Grid container spacing={5}>
           <Grid item xs={12}>
             <Typography variant="body1">
               <ul>
+                <li>Start typing for autocomplete.</li>
                 <li>On every select the state is updated.</li>
               </ul>
             </Typography>
@@ -260,14 +265,13 @@ const SelectMultipleAutocomplete = props => {
                 multiple
                 filterSelectedOptions
                 options={values}
-                getOptionLabel={option => option}
                 onChange={selectHandler}
                 closeIcon={null}
                 renderInput={params => (
                   <TextField
                     {...params}
                     variant="standard"
-                    label="Select multiple items"
+                    label="Select multiple items."
                   />
                 )}
                 renderTags={() => (
@@ -287,6 +291,16 @@ const SelectMultipleAutocomplete = props => {
                 )}
               />
             </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" spacing={1}>
+              State:
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Box border={1} borderColor="text.secondary" padding={2}>
+              {JSON.stringify(selected)}
+            </Box>
           </Grid>
         </Grid>
       </CardContent>
