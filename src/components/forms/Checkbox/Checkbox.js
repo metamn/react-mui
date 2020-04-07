@@ -35,18 +35,6 @@ const defaultProps = {
 };
 
 /**
- * Styles the component
- */
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex"
-  },
-  formControl: {
-    margin: theme.spacing(1)
-  }
-}));
-
-/**
  * Displays the component
  */
 const Checkbox = props => {
