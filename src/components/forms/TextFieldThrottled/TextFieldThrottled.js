@@ -99,9 +99,16 @@ const TextFieldThrottled = props => {
         <Button
           size="small"
           color="primary"
-          href="https://github.com/metamn/react-mui/blob/master/src/components/forms/TextField/TextField.js"
+          href="https://github.com/metamn/react-mui/blob/master/src/components/forms/TextFieldThrottled/TextFieldThrottled.js"
         >
           See code
+        </Button>
+        <Button
+          size="small"
+          color="primary"
+          href="https://medium.com/@rajeshnaroth/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3"
+        >
+          See article
         </Button>
       </CardActions>
     </Card>
