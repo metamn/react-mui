@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
+import { debounce } from "lodash";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -11,7 +12,7 @@ import Grid from "@material-ui/core/Grid";
 
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
-import { TextField as MUITextField } from "@material-ui/core/";
+import TextField from "@material-ui/core/TextField";
 
 /**
  * Defines the prop types
@@ -26,34 +27,47 @@ const defaultProps = {};
 /**
  * Displays the component
  */
-const TextField = props => {
+const TextFieldThrottled = props => {
   const [value, setValue] = useState("");
   const [log, setLog] = useState("");
 
+  /**
+   * Debounces the log update
+   *
+   * @see https://medium.com/@rajeshnaroth/using-throttle-and-debounce-in-a-react-function-component-5489fc3461b3
+   */
+  const updateLogWithDebounce = useRef(
+    debounce(value => {
+      if (value) {
+        setLog(previousValue => previousValue + `${value} — `);
+      }
+    }, 500)
+  ).current;
+
   const handleChange = event => {
     setValue(event.target.value);
+    updateLogWithDebounce(event.target.value);
   };
 
-  useEffect(() => {
-    if (value) {
-      setLog(previousValue => previousValue + `${value} — `);
-    }
-  }, [value]);
-
   return (
-    <Card className="TextField">
+    <Card className="TextFieldThrottled">
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          Text Field
+          Text Field, Throttled
         </Typography>
 
         <Grid container spacing={5}>
           <Grid item xs={12}>
             <Typography variant="body1">
               <ul>
-                <li>Simple version, without throttling.</li>
                 <li>
-                  On every keypress the state and the keystroke log is updated.
+                  Instead of every keypress the keystroke log is updated every
+                  500 miliseconds.
+                </li>
+                <li>
+                  If the keystroke log were an expensive operation like an API
+                  call this throttling mechanism would reduce the number of
+                  calls significantly.
                 </li>
               </ul>
             </Typography>
@@ -61,7 +75,7 @@ const TextField = props => {
           <Grid item xs={12}>
             <Typography variant="body2" color="textSecondary" component="div">
               <FormControl fullWidth>
-                <MUITextField
+                <TextField
                   label="Please enter text"
                   value={value}
                   onChange={handleChange}
@@ -94,11 +108,11 @@ const TextField = props => {
   );
 };
 
-TextField.propTypes = propTypes;
-TextField.defaultProps = defaultProps;
+TextFieldThrottled.propTypes = propTypes;
+TextFieldThrottled.defaultProps = defaultProps;
 
-export default TextField;
+export default TextFieldThrottled;
 export {
-  propTypes as TextFieldPropTypes,
-  defaultProps as TextFieldDefaultProps
+  propTypes as TextFieldThrottledPropTypes,
+  defaultProps as TextFieldThrottledDefaultProps
 };

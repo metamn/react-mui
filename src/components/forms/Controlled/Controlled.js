@@ -5,6 +5,7 @@ import { Link as RouterLink } from "react-router-dom";
 import Header from "../../Header";
 import Breadcrumbs from "../../Breadcrumbs";
 import TextField from "../TextField";
+import TextFieldThrottled from "../TextFieldThrottled";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -100,6 +101,9 @@ const Controlled = props => {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextFieldThrottled />
         </Grid>
       </Grid>
     </Container>
