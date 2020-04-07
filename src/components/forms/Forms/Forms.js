@@ -37,7 +37,7 @@ const Forms = props => {
     <>
       <Switch>
         <Route exact path={path}>
-          <Container className="Forms" maxWidth={false}>
+          <Container className="Forms" maxWidth="lg">
             <Grid container spacing={1}>
               <Grid item xs={12}>
                 <Header currentPage="Forms" />

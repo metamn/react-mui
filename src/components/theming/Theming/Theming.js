@@ -21,7 +21,7 @@ const defaultProps = {};
  */
 const Theming = props => {
   return (
-    <Container className="Theming" maxWidth={false}>
+    <Container className="Theming" maxWidth="lg">
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Header currentPage="Theming" />

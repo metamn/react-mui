@@ -85,6 +85,7 @@ const Hero = props => {
               <Button
                 variant="contained"
                 color="primary"
+                size="large"
                 href="https://github.com/metamn/react-mui"
               >
                 Check the code on Github

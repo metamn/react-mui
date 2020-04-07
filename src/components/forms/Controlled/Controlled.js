@@ -61,7 +61,7 @@ const ControlledAsCard = props => {
  */
 const Controlled = props => {
   return (
-    <Container className="Controlled" maxWidth={false}>
+    <Container className="Controlled" maxWidth="lg">
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Header currentPage="Forms" />

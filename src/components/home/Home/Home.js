@@ -23,7 +23,7 @@ const defaultProps = {};
  */
 const Home = props => {
   return (
-    <Container className="Home" maxWidth={false}>
+    <Container className="Home" maxWidth="lg">
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Header currentPage="Home" />
