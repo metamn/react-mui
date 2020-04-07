@@ -133,7 +133,7 @@ const Checkbox = props => {
         <Button
           size="small"
           color="primary"
-          href="https://github.com/metamn/react-mui/blob/master/src/components/forms/TextField/TextField.js"
+          href="https://github.com/metamn/react-mui/blob/master/src/components/forms/Checkbox/Checkbox.js"
         >
           See code
         </Button>
