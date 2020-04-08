@@ -181,6 +181,12 @@ const isPortrait = useMediaQuery("(orientation: portrait)");
 ### Dark mode
 
 - The default MUI dark theme is not legible / accessible at all: https://i.imgur.com/Xn3qC0b.png
+- The primary color (blue) contrast ratio to the background (blackish) is not passing the visibility tests: https://contrast-ratio.com/#%233f51b5-on-%23303030
+
+```js
+// This is not legible
+<Button color="primary">Learn More</Button>
+```
 
 ## In this project
 
