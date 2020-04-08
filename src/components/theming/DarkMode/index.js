@@ -1,6 +1,1 @@
-export {
-  default,
-  DarkModePropTypes,
-  DarkModeDefaultProps,
-  DarkModeAsCard
-} from "./DarkMode";
+export { default, DarkModePropTypes, DarkModeDefaultProps } from "./DarkMode";
