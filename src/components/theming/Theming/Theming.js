@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 import Header from "../../Header";
-import { DarkModeAsCard } from "../DarkMode";
+import DarkMode, { DarkModeAsCard } from "../DarkMode";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -48,6 +48,9 @@ const Theming = props => {
               </Grid>
             </Grid>
           </Container>
+        </Route>
+        <Route path={`${path}/darkmode`}>
+          <DarkMode />
         </Route>
       </Switch>
     </>

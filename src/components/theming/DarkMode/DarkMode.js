@@ -13,6 +13,9 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
+import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
 
 /**
  * Defines the prop types
@@ -53,7 +56,42 @@ const DarkModeAsCard = props => {
  * Displays the component
  */
 const DarkMode = props => {
-  return <div className="DarkMode">DarkMode</div>;
+  return (
+    <Container className="DarkMode" maxWidth="lg">
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Header currentPage="Theming" />
+        </Grid>
+        <Grid item xs={12}>
+          <Breadcrumbs />
+        </Grid>
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Typography variant="h4">Dark mode</Typography>
+              <Typography variant="body1">
+                <ul>
+                  <li>
+                    If the user prefers dark mode then the dark theme is
+                    displayed by default.
+                  </li>
+                </ul>
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                size="small"
+                color="primary"
+                href="https://github.com/metamn/react-mui/blob/master/src/hooks/useDarkMode/useDarkMode.js"
+              >
+                See code
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 };
 
 DarkMode.propTypes = propTypes;
