@@ -1,5 +1,6 @@
 export {
   default,
   UncontrolledPropTypes,
-  UncontrolledDefaultProps
+  UncontrolledDefaultProps,
+  UncontrolledCard
 } from "./Uncontrolled";

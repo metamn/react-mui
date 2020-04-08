@@ -12,7 +12,7 @@ import {
 
 import Header from "../../Header";
 import Controlled, { ControlledAsCard } from "../Controlled";
-import Uncontrolled from "../Uncontrolled";
+import Uncontrolled, { UncontrolledCard } from "../Uncontrolled";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -48,7 +48,7 @@ const Forms = props => {
                 <ControlledAsCard url={url} />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
-                <Uncontrolled />
+                <UncontrolledCard url={url} />
               </Grid>
             </Grid>
           </Container>
