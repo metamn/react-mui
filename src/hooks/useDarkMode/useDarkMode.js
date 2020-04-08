@@ -3,7 +3,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 /**
- * Displays the component
+ * Displays the theme in dark mode if the user prefers it
  */
 const useDarkMode = props => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");

@@ -1,7 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch
+} from "react-router-dom";
+
 import Header from "../../Header";
+import { DarkModeAsCard } from "../DarkMode";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -20,14 +30,27 @@ const defaultProps = {};
  * Displays the component
  */
 const Theming = props => {
+  const { path, url } = useRouteMatch();
+
   return (
-    <Container className="Theming" maxWidth="lg">
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <Header currentPage="Theming" />
-        </Grid>
-      </Grid>
-    </Container>
+    <>
+      <Switch>
+        <Route exact path={path}>
+          <Container className="Theming" maxWidth="lg">
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <Header currentPage="Theming" />
+              </Grid>
+            </Grid>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={6} md={4}>
+                <DarkModeAsCard url={url} />
+              </Grid>
+            </Grid>
+          </Container>
+        </Route>
+      </Switch>
+    </>
   );
 };
 
