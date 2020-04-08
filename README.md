@@ -1,6 +1,6 @@
 # react-mui
 
-Playing with React and Material UI.
+Playing with React and Material UI. See https://react-mui.metamn.now.sh/
 
 ## Status
 
