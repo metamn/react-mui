@@ -69,7 +69,7 @@ const DarkMode = props => {
           <Card>
             <CardContent>
               <Typography variant="h4">Dark mode</Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" component="div">
                 <ul>
                   <li>
                     If the user prefers dark mode then the dark theme is

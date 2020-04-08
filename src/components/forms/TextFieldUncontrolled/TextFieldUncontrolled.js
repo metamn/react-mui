@@ -54,7 +54,7 @@ const TextFieldUncontrolled = props => {
 
         <Grid container spacing={5}>
           <Grid item xs={12}>
-            <Typography variant="body1">
+            <Typography variant="body1" component="div">
               <ul>
                 <li>
                   The state of the input is updated when the button is clicked.

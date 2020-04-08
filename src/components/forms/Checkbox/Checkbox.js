@@ -88,7 +88,7 @@ const Checkbox = props => {
 
         <Grid container spacing={5}>
           <Grid item xs={12}>
-            <Typography variant="body1">
+            <Typography variant="body1" component="div">
               <ul>
                 <li>On every check the state is updated.</li>
               </ul>

@@ -68,7 +68,7 @@ const Uncontrolled = props => {
           <Card>
             <CardContent>
               <Typography variant="h4">Uncontrolled forms</Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" component="div">
                 <ul>
                   <li>
                     Form inputs are controlled by something else than React.
@@ -85,7 +85,7 @@ const Uncontrolled = props => {
                   </li>
                 </ul>
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" component="div">
                 <p>
                   Uncontrolled forms are mostly about the third party libraries.
                   They all look tempting but sometimes introduce more overhead

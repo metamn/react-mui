@@ -252,7 +252,7 @@ const SelectMultipleAutocomplete = props => {
 
         <Grid container spacing={5}>
           <Grid item xs={12}>
-            <Typography variant="body1">
+            <Typography variant="body1" component="div">
               <ul>
                 <li>Start typing for autocomplete.</li>
                 <li>On every select the state is updated.</li>
