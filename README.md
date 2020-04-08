@@ -188,6 +188,9 @@ const isPortrait = useMediaQuery("(orientation: portrait)");
 <Button color="primary">Learn More</Button>
 ```
 
+- There is no _official_ theme switcher module / plugin: https://material-ui.com/discover-more/related-projects/#theming nor an NPM module: https://www.npmjs.com/search?q=material%20ui%20theme%20switch
+- There is this module https://www.npmjs.com/package/material-ui-theme-state which returns a 404 error for it's Github repo page: https://github.com/bluelovers/ws-react/material-ui-theme-state#readme
+
 ## In this project
 
 ### Header / AppBar
