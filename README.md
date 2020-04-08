@@ -17,7 +17,7 @@ MUI is the most popular Design System out there. Yet it has to be used with care
 
 Component functionality might easily overlap; the layout can be easily broken; code can become more complicated than necessary; and so on.
 
-A minimalist approach can reduce all above problems and offer a _best practices_ approach like we have for React.
+A minimalist approach can reduce all above problems and offer _best practices_.
 
 ### 2. Don't write CSS by hand
 
