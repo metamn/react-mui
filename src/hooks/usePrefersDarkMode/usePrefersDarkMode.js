@@ -5,7 +5,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 /**
  * Displays the theme in dark mode if the user prefers it
  */
-const useDarkMode = props => {
+const usePrefersDarkMode = props => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const theme = useMemo(
@@ -21,4 +21,4 @@ const useDarkMode = props => {
   return theme;
 };
 
-export { useDarkMode };
+export { usePrefersDarkMode };

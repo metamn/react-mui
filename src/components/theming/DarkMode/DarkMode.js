@@ -82,7 +82,7 @@ const DarkMode = props => {
               <Button
                 size="small"
                 color="primary"
-                href="https://github.com/metamn/react-mui/blob/master/src/hooks/useDarkMode/useDarkMode.js"
+                href="https://github.com/metamn/react-mui/blob/master/src/hooks/usePrefersDarkMode/usePrefersDarkMode.js"
               >
                 See code
               </Button>

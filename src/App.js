@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { useDarkMode } from "./hooks";
+import { usePrefersDarkMode } from "./hooks";
 
 import Home from "./components/home/Home";
 import Forms from "./components/forms/Forms";
@@ -11,7 +11,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
 
 const App = () => {
-  const theme = useDarkMode();
+  const theme = usePrefersDarkMode();
 
   return (
     <ThemeProvider theme={theme}>
