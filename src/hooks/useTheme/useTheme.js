@@ -15,16 +15,14 @@ const useTheme = props => {
   /**
    * Checks if the browser has stored a preference for a theme.
    */
-  const [currentThemeSaved, setCurrentThemeSaved] = useLocalStorage(
-    "current-theme"
-  );
+  const [themeSaved, setThemeSaved] = useLocalStorage("current-theme");
 
   /**
    * Defines the current theme based on the above preferences.
    */
-  const getCurrentTheme = (currentThemeSaved, prefersDarkMode) =>
-    typeof currentThemeSaved !== "undefined"
-      ? currentThemeSaved
+  const getCurrentTheme = (themeSaved, prefersDarkMode) =>
+    typeof themeSaved !== "undefined"
+      ? themeSaved
       : prefersDarkMode
       ? "dark"
       : "light";
@@ -33,21 +31,21 @@ const useTheme = props => {
    * Sets currentTheme the async way
    */
   const currentTheme = useMemo(
-    () => getCurrentTheme(currentThemeSaved, prefersDarkMode),
-    [prefersDarkMode, currentThemeSaved]
+    () => getCurrentTheme(themeSaved, prefersDarkMode),
+    [prefersDarkMode, themeSaved]
   );
 
   /**
-   * Sets the theme
+   * Stores the theme in a state
    */
   const [theme, setTheme] = useState(currentTheme);
 
   /**
-   * Sets theme the async way
+   * Sets theme initial value the async way
    */
   useEffect(() => setTheme(currentTheme), [currentTheme]);
 
-  return [theme, setTheme];
+  return { theme, setTheme, setThemeSaved };
 };
 
 export { useTheme };

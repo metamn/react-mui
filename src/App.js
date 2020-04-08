@@ -1,23 +1,30 @@
 import React, { useMemo } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { usePrefersDarkMode, useTheme } from "./hooks";
+import { useTheme } from "./hooks";
 
 import Home from "./components/home/Home";
 import Forms from "./components/forms/Forms";
 import Theming from "./components/theming/Theming";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const App = () => {
-  const theme2 = usePrefersDarkMode();
-  const [theme, setTheme] = useTheme();
+  const { theme } = useTheme();
 
-  console.log("theme:", theme);
+  const MUITheme = useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: theme
+        }
+      }),
+    [theme]
+  );
 
   return (
-    <ThemeProvider theme={theme2}>
+    <ThemeProvider theme={MUITheme}>
       <CssBaseline />
       <Router>
         <Switch>
