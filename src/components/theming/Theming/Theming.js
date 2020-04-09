@@ -13,6 +13,7 @@ import {
 import Header from "../../Header";
 import DarkMode from "../DarkMode";
 import ThemeSwitcher from "../ThemeSwitcher";
+import Finster from "../Finster";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -49,6 +50,9 @@ const Theming = props => {
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
                 <ThemeSwitcher />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <Finster />
               </Grid>
             </Grid>
           </Container>
