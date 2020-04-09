@@ -27,11 +27,31 @@ const defaultProps = {};
 /**
  * Defines the Finster theme
  *
- * - From https://xd.adobe.com/view/d7d7ce14-cfbb-44b8-68d8-c6d686c2b4fd-a1e6/screen/04350c22-6db1-4f6f-b693-f3c3e8748cff/Web-1920-7/
+ * - From XD https://xd.adobe.com/view/d7d7ce14-cfbb-44b8-68d8-c6d686c2b4fd-a1e6/screen/04350c22-6db1-4f6f-b693-f3c3e8748cff/Web-1920-7/
+ *
+ * - In the MUI color tool: https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=FA9140&secondary.color=FA9140&primary.text.color=ffffff&secondary.text.color=ffffff
+ *
+ * Problems with the design:
+ *
+ * 1. There is no secondary color
+ * 2. White on primary is not legible. Trying to set on bold + increase letter spacing to increase legibility.
  */
 const finsterTheme = {
   palette: {
-    type: "light"
+    secondary: {
+      main: "#FA9140",
+      contrastText: "#ffffff"
+    },
+    primary: {
+      main: "#FA9140",
+      contrastText: "#ffffff"
+    }
+  },
+  typography: {
+    button: {
+      fontWeight: "bold",
+      letterSpacing: "0.05em" // It was 0.01071em
+    }
   }
 };
 
