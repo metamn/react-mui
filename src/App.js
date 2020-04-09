@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { useTheme } from "./hooks";
+import { useThemeSwitcher } from "./hooks";
 
 import Home from "./components/home/Home";
 import Forms from "./components/forms/Forms";
@@ -11,16 +11,16 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const App = () => {
-  const { theme } = useTheme();
+  const { themeID } = useThemeSwitcher();
 
   const MUITheme = useMemo(
     () =>
       createMuiTheme({
         palette: {
-          type: theme
+          type: themeID
         }
       }),
-    [theme]
+    [themeID]
   );
 
   return (

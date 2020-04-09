@@ -6,7 +6,7 @@ import useLocalStorage from "../useLocalStorage";
 /**
  * Displays the component
  */
-const useTheme = props => {
+const useThemeSwitcher = props => {
   /**
    * Checks if the user / browser prefers dark mode.
    */
@@ -53,4 +53,4 @@ const useTheme = props => {
   return { themeID, setThemeID };
 };
 
-export { useTheme };
+export { useThemeSwitcher };
