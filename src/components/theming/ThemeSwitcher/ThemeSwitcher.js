@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { useThemeSwitcher } from "../../../hooks";
+import { usePreferredTheme } from "../../../hooks";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -27,7 +27,7 @@ const defaultProps = {};
  * Displays the component
  */
 const ThemeSwitcher = props => {
-  const { themeID, setThemeID } = useThemeSwitcher();
+  const { themeID, setThemeID } = usePreferredTheme();
 
   const [switched, setSwitched] = useState(themeID === "light");
 
