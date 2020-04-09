@@ -182,6 +182,7 @@ const isPortrait = useMediaQuery("(orientation: portrait)");
 
 - The default MUI dark theme is not legible / accessible at all: https://i.imgur.com/Xn3qC0b.png
 - The primary color (blue) contrast ratio to the background (blackish) is not passing the visibility tests: https://contrast-ratio.com/#%233f51b5-on-%23303030
+- Also an issue is filed in MUI Github: https://github.com/mui-org/material-ui/issues/18776
 
 ```js
 // This is not legible

@@ -64,7 +64,7 @@ const ThemeSwitcher = props => {
         <Button
           size="small"
           color="primary"
-          href="https://github.com/metamn/react-mui/blob/master/src/hooks/usePrefersDarkMode/usePrefersDarkMode.js"
+          href="https://github.com/metamn/react-mui/blob/master/src/components/theming/ThemeSwitcher/ThemeSwitcher.js"
         >
           See code
         </Button>
