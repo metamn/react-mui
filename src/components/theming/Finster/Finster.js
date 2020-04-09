@@ -76,7 +76,7 @@ const Finster = props => {
           <ul>
             <li>Creating a custom theme for Finster.</li>
             <li>
-              Based on a few design token coming from{" "}
+              Based on a few design tokens coming from{" "}
               <Link to="https://xd.adobe.com/view/d7d7ce14-cfbb-44b8-68d8-c6d686c2b4fd-a1e6/screen/04350c22-6db1-4f6f-b693-f3c3e8748cff/Web-1920-7/">
                 Adobe XD
               </Link>
