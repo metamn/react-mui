@@ -11,16 +11,16 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const App = () => {
-  const { themeID } = usePreferredTheme();
+  const { preferredTheme } = usePreferredTheme();
 
   const MUITheme = useMemo(
     () =>
       createMuiTheme({
         palette: {
-          type: themeID
+          type: preferredTheme
         }
       }),
-    [themeID]
+    [preferredTheme]
   );
 
   return (

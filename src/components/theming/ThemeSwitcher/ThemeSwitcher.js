@@ -27,16 +27,16 @@ const defaultProps = {};
  * Displays the component
  */
 const ThemeSwitcher = props => {
-  const { themeID, setThemeID } = usePreferredTheme();
+  const { preferredTheme, setPreferredTheme } = usePreferredTheme();
 
-  const [switched, setSwitched] = useState(themeID === "light");
+  const [switched, setSwitched] = useState(preferredTheme === "light");
 
   const handleChange = event => {
     setSwitched(event.target.checked);
   };
 
   useEffect(() => {
-    setThemeID(switched ? "dark" : "light");
+    setPreferredTheme(switched ? "dark" : "light");
   }, [switched]);
 
   return (
