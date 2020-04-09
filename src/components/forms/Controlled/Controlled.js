@@ -71,7 +71,7 @@ const Controlled = props => {
           <Card>
             <CardContent>
               <Typography variant="h4">Controlled forms</Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" component="div">
                 <ul>
                   <li>
                     React holds the state of the form inputs and controls their

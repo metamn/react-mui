@@ -17,7 +17,7 @@ MUI is the most popular Design System out there. Yet it has to be used with care
 
 Component functionality might easily overlap; the layout can be easily broken; code can become more complicated than necessary; and so on.
 
-A minimalist approach can reduce all above problems and offer a _best practices_ approach like we have for React.
+A minimalist approach can reduce all above problems and offer _best practices_.
 
 ### 2. Don't write CSS by hand
 
@@ -177,6 +177,19 @@ const useStyles = makeStyles(theme => ({
 ```js
 const isPortrait = useMediaQuery("(orientation: portrait)");
 ```
+
+### Dark mode
+
+- The default MUI dark theme is not legible / accessible at all: https://i.imgur.com/Xn3qC0b.png
+- The primary color (blue) contrast ratio to the background (blackish) is not passing the visibility tests: https://contrast-ratio.com/#%233f51b5-on-%23303030
+
+```js
+// This is not legible
+<Button color="primary">Learn More</Button>
+```
+
+- There is no _official_ theme switcher module / plugin: https://material-ui.com/discover-more/related-projects/#theming nor an NPM module: https://www.npmjs.com/search?q=material%20ui%20theme%20switch
+- There is this module https://www.npmjs.com/package/material-ui-theme-state which returns a 404 error for it's Github repo page: https://github.com/bluelovers/ws-react/material-ui-theme-state#readme
 
 ## In this project
 

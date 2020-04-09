@@ -49,7 +49,7 @@ const TextField = props => {
 
         <Grid container spacing={5}>
           <Grid item xs={12}>
-            <Typography variant="body1">
+            <Typography variant="body1" component="div">
               <ul>
                 <li>Simple version, without throttling.</li>
                 <li>
