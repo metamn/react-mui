@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 
-import { usePreferredTheme } from "../../../hooks";
+import { ThemeContext } from "../../../App";
+import { useTheme } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -27,17 +28,17 @@ const defaultProps = {};
  * Displays the component
  */
 const ThemeSwitcher = props => {
-  const { preferredTheme, setPreferredTheme } = usePreferredTheme();
+  const theme = useTheme();
+  const { palette } = theme;
+  const { type: themeName } = palette;
+  const checked = themeName === "dark";
 
-  const [switched, setSwitched] = useState(preferredTheme === "light");
+  const { switchTheme } = useContext(ThemeContext);
 
   const handleChange = event => {
-    setSwitched(event.target.checked);
+    const themeID = event.target.checked ? "dark" : "light";
+    switchTheme(themeID);
   };
-
-  useEffect(() => {
-    setPreferredTheme(switched ? "dark" : "light");
-  }, [switched]);
 
   return (
     <Card>
@@ -46,12 +47,15 @@ const ThemeSwitcher = props => {
         <Typography variant="body1" component="div">
           <ul>
             <li>Switches between light and dark themes.</li>
+            <li>
+              Saves the theme preference into the browser's local storage.
+            </li>
           </ul>
         </Typography>
         <Grid component="label" container alignItems="center" spacing={1}>
           <Grid item>Light</Grid>
           <Grid item>
-            <Switch checked={switched} onChange={handleChange} />
+            <Switch checked={checked} onChange={handleChange} />
           </Grid>
           <Grid item>Dark</Grid>
         </Grid>

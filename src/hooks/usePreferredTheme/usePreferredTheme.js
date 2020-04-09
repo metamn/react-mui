@@ -38,19 +38,19 @@ const usePreferredTheme = props => {
   /**
    * Stores the theme in a state
    */
-  const [preferredTheme, setPreferredTheme] = useState(currentTheme);
+  const [preferredThemeID, setPreferredThemeID] = useState(currentTheme);
 
   /**
    * Sets theme initial value the async way
    */
-  useEffect(() => setPreferredTheme(currentTheme), [currentTheme]);
+  useEffect(() => setPreferredThemeID(currentTheme), [currentTheme]);
 
   /**
    * Saves the theme into the browser local storage
    */
-  useEffect(() => setThemeSaved(preferredTheme), [preferredTheme]);
+  useEffect(() => setThemeSaved(preferredThemeID), [preferredThemeID]);
 
-  return { preferredTheme, setPreferredTheme };
+  return { preferredThemeID, setPreferredThemeID };
 };
 
 export { usePreferredTheme };
