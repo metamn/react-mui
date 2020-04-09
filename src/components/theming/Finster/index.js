@@ -1,1 +1,6 @@
-export { default, FinsterPropTypes, FinsterDefaultProps } from "./Finster";
+export {
+  default,
+  FinsterPropTypes,
+  FinsterDefaultProps,
+  finsterTheme
+} from "./Finster";

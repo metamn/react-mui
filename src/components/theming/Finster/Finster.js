@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
 import { ThemeContext } from "../../../App";
+import { useTheme } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -24,9 +25,23 @@ const propTypes = {};
 const defaultProps = {};
 
 /**
+ * Defines the Finster theme
+ *
+ * - From https://xd.adobe.com/view/d7d7ce14-cfbb-44b8-68d8-c6d686c2b4fd-a1e6/screen/04350c22-6db1-4f6f-b693-f3c3e8748cff/Web-1920-7/
+ */
+const finsterTheme = {
+  palette: {
+    type: "light"
+  }
+};
+
+/**
  * Displays the component
  */
 const Finster = props => {
+  const theme = useTheme();
+  console.log("theme:", theme);
+
   const { switchTheme } = useContext(ThemeContext);
 
   const handleClick = () => {
@@ -72,4 +87,8 @@ Finster.propTypes = propTypes;
 Finster.defaultProps = defaultProps;
 
 export default Finster;
-export { propTypes as FinsterPropTypes, defaultProps as FinsterDefaultProps };
+export {
+  propTypes as FinsterPropTypes,
+  defaultProps as FinsterDefaultProps,
+  finsterTheme
+};
