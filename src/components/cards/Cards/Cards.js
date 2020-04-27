@@ -12,6 +12,7 @@ import {
 
 import Header from "../../Header";
 import Hero, { HeroAsCard } from "../Hero";
+import BackgroundImage, { BackgroundImageAsCard } from "../BackgroundImage";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -46,11 +47,17 @@ const Cards = props => {
               <Grid item xs={12} sm={6} md={4}>
                 <HeroAsCard url={url} />
               </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <BackgroundImageAsCard url={url} />
+              </Grid>
             </Grid>
           </Container>
         </Route>
         <Route path={`${path}/hero`}>
           <Hero />
+        </Route>
+        <Route path={`${path}/background-image`}>
+          <BackgroundImage />
         </Route>
       </Switch>
     </>
