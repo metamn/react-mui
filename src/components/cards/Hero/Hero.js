@@ -118,7 +118,7 @@ const Hero = props => {
   const cardActions = (
     <>
       <Button variant="contained" size="large" href="#">
-        "View the app"
+        View the app
       </Button>
     </>
   );

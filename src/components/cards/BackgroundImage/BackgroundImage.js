@@ -105,8 +105,8 @@ const BackgroundImageAsCard = props => {
             with MUI.
           </p>
           <p>
-            The only way to solve this issue the MUI way is to use a `CardMedia`
-            component which displays images as a background image
+            The only way to solve this issue with MUI is to use a `CardMedia`
+            component which displays images as a background image by default.
           </p>
         </Typography>
       </CardContent>
@@ -151,7 +151,7 @@ const BackgroundImage = props => {
   const cardActions = (
     <>
       <Button variant="contained" size="large" href="#">
-        "View the app"
+        View the app
       </Button>
     </>
   );
