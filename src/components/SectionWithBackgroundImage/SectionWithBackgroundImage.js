@@ -30,8 +30,6 @@ const defaultProps = {
  * Styles the component
  */
 const useStyles = makeStyles(theme => ({
-  container: {},
-
   background: {
     position: "absolute",
     width: "100%",

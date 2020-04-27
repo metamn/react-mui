@@ -12,6 +12,13 @@ import SectionWithBackgroundImage, {
 
 import backgroundImage from "./background-image.png";
 
+import CardWithMedia, {
+  CardWithMediaPropTypes,
+  CardWithMediaDefaultProps
+} from "../../CardWithMedia";
+
+import hero from "./hero.png";
+
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -38,7 +45,44 @@ const defaultProps = {
 /**
  * Styles the component
  */
-const useStyles = makeStyles(theme => ({}));
+const useStyles = makeStyles(theme => ({
+  section1: {
+    position: "relative",
+    width: "100vw",
+    height: "100vh"
+  },
+
+  section2: {
+    position: "relative",
+    width: "100vw",
+    height: "100vh"
+  },
+
+  /**
+   * Classes for the section 2 Hero
+   */
+  media: {
+    width: "100vw",
+    height: "calc(100vw / 1.83)", // aspectRatio={1494 / 814 = 1.83}
+
+    [theme.breakpoints.up("lg")]: {
+      width: "76vw",
+      height: "calc(76vw / 1.83)"
+    },
+
+    [theme.breakpoints.up("xl")]: {
+      width: "66vw",
+      height: "calc(66vw / 1.83)"
+    }
+  },
+
+  actionsClass: {
+    /**
+     * Could not make spacing work with the MUI API: https://material-ui.com/api/card-actions/#cardactions-api
+     */
+    marginLeft: theme.spacing(1)
+  }
+}));
 
 /**
  * Displays the component as a Card
@@ -77,11 +121,53 @@ const BackgroundImage = props => {
   const { section } = props;
 
   const classes = useStyles();
+  const { section1, section2 } = classes;
 
+  // First section
   const sectionWithBackgroundImage = {
     image: backgroundImage,
     klasses: classes,
     content: "Simple text"
+  };
+
+  // Second section
+  const cardContent = (
+    <>
+      <Typography gutterBottom variant="h4">
+        Malesuada pellentesque
+      </Typography>
+      <Typography gutterBottom variant="h5">
+        Lacus maecenas nisl
+      </Typography>
+      <Typography variant="subtitle1">
+        Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut
+        sit amet erat nec nibrhoncus varius in non lorem. Donec interdum, lectus
+        in convallis pulvinar, enim elit porta sapien,vel finibus erat felis sed
+        neque.
+      </Typography>
+    </>
+  );
+
+  const cardActions = (
+    <>
+      <Button variant="contained" size="large" href="#">
+        "View the app"
+      </Button>
+    </>
+  );
+
+  const cardWithMedia = {
+    image: hero,
+    imageTitle: "Hero image",
+    content: cardContent,
+    actions: cardActions,
+    klasses: classes
+  };
+
+  const sectionWithBackgroundImage2 = {
+    image: backgroundImage,
+    klasses: classes,
+    content: <CardWithMedia {...cardWithMedia} />
   };
 
   return (
@@ -93,8 +179,11 @@ const BackgroundImage = props => {
         <Grid item xs={12}>
           <Breadcrumbs />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} className={section1}>
           <SectionWithBackgroundImage {...sectionWithBackgroundImage} />
+        </Grid>
+        <Grid item xs={12} className={section2}>
+          <SectionWithBackgroundImage {...sectionWithBackgroundImage2} />
         </Grid>
       </Grid>
     </Container>
