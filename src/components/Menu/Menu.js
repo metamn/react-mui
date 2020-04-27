@@ -19,15 +19,7 @@ const propTypes = {
  * Defines the default props
  */
 const defaultProps = {
-  items: [
-    "Home",
-    "Forms",
-    "Theming",
-    "Item four",
-    "Item five",
-    "Item six",
-    "Item seven, the last one"
-  ],
+  items: ["Home", "Cards", "Forms", "Theming"],
   currentPage: "Home"
 };
 
