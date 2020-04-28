@@ -50,17 +50,19 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     width: "100vw",
     height: "100vh"
-  },
+  }
+}));
 
+/**
+ * Styles for the section 2 Hero
+ */
+const useStyles2 = makeStyles(theme => ({
   section2: {
     position: "relative",
     width: "100vw",
     height: "100vh"
   },
 
-  /**
-   * Classes for the section 2 Hero
-   */
   media: {
     width: "100vw",
     height: "calc(100vw / 1.83)", // aspectRatio={1494 / 814 = 1.83}
@@ -121,7 +123,7 @@ const BackgroundImage = props => {
   const { section } = props;
 
   const classes = useStyles();
-  const { section1, section2 } = classes;
+  const { section1 } = classes;
 
   // First section
   const sectionWithBackgroundImage = {
@@ -129,6 +131,9 @@ const BackgroundImage = props => {
     klasses: classes,
     content: "Simple text"
   };
+
+  const classes2 = useStyles2();
+  const { section2 } = classes2;
 
   // Second section
   const cardContent = (
@@ -161,12 +166,12 @@ const BackgroundImage = props => {
     imageTitle: "Hero image",
     content: cardContent,
     actions: cardActions,
-    klasses: classes
+    klasses: classes2
   };
 
   const sectionWithBackgroundImage2 = {
     image: backgroundImage,
-    klasses: classes,
+    klasses: classes2,
     content: <CardWithMedia {...cardWithMedia} />
   };
 
