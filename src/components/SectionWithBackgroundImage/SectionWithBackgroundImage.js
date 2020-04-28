@@ -30,17 +30,22 @@ const defaultProps = {
  * Styles the component
  */
 const useStyles = makeStyles(theme => ({
-  background: {
+  container: {
+    width: "100%",
+    height: "100%"
+  },
+
+  card: {
     position: "absolute",
     width: "100%",
     height: "100%",
     top: 0,
     left: 0,
     zIndex: "-1",
-    backgroundColor: "transparent"
+    cardColor: "transparent"
   },
 
-  backgroundImage: {
+  cardMedia: {
     width: "100%",
     height: "100%"
   }
@@ -53,32 +58,28 @@ const SectionWithBackgroundImage = props => {
   const { image, content, klasses } = props;
 
   const classes = useStyles();
-  const { container, background, backgroundImage } = classes;
+  const { container, card, cardMedia } = classes;
 
-  const {
-    container: klassContainer,
-    background: klassBackground,
-    backgroundImage: klassBackgroundImage
-  } = klasses;
+  const { container: container2, card: card2, cardMedia: cardMedia2 } = klasses;
 
   return (
     <Grid
       container
-      className={clsx("SectionWithBackgroundImage", container, klassContainer)}
+      className={clsx("SectionWithBackgroundImage", container, container2)}
       spacing={0}
     >
       {image && (
         <Card
-          className={clsx("Background", background, klassBackground)}
+          className={clsx("SectionWithBackgroundImageCard", card, card2)}
           elevation={0}
           square
         >
           <CardMedia
             image={image}
             className={clsx(
-              "BackgroundImage",
-              backgroundImage,
-              klassBackgroundImage
+              "SectionWithBackgroundImageCardMedia",
+              cardMedia,
+              cardMedia2
             )}
           />
         </Card>

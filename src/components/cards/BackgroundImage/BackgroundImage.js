@@ -43,9 +43,9 @@ const defaultProps = {
 };
 
 /**
- * Styles the component
+ * Styles the first background
  */
-const useStyles = makeStyles(theme => ({
+const section1Styles = makeStyles(theme => ({
   section1: {
     position: "relative",
     width: "100vw",
@@ -54,16 +54,29 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * Styles for the section 2 Hero
+ * Styles for the second background
  */
-const useStyles2 = makeStyles(theme => ({
+const section2Styles = makeStyles(theme => ({
   section2: {
     position: "relative",
     width: "100vw",
     height: "100vh"
+  }
+}));
+
+/**
+ * Styles for the second background's Hero
+ */
+const heroStyles = makeStyles(theme => ({
+  card: {
+    backgroundColor: "transparent"
   },
 
-  media: {
+  cardContainer: {
+    height: "100%" // Stretch and center
+  },
+
+  cardMedia: {
     width: "100vw",
     height: "calc(100vw / 1.83)", // aspectRatio={1494 / 814 = 1.83}
 
@@ -78,7 +91,7 @@ const useStyles2 = makeStyles(theme => ({
     }
   },
 
-  actionsClass: {
+  cardActions: {
     /**
      * Could not make spacing work with the MUI API: https://material-ui.com/api/card-actions/#cardactions-api
      */
@@ -122,18 +135,11 @@ const BackgroundImageAsCard = props => {
 const BackgroundImage = props => {
   const { section } = props;
 
-  const classes = useStyles();
-  const { section1 } = classes;
-
   // First section
   const sectionWithBackgroundImage = {
     image: backgroundImage,
-    klasses: classes,
-    content: "Simple text"
+    content: <Typography variant="h4">Simple text</Typography>
   };
-
-  const classes2 = useStyles2();
-  const { section2 } = classes2;
 
   // Second section
   const cardContent = (
@@ -161,19 +167,26 @@ const BackgroundImage = props => {
     </>
   );
 
+  const heroClasses = heroStyles();
+
   const cardWithMedia = {
     image: hero,
     imageTitle: "Hero image",
     content: cardContent,
     actions: cardActions,
-    klasses: classes2
+    klasses: heroClasses
   };
 
   const sectionWithBackgroundImage2 = {
     image: backgroundImage,
-    klasses: classes2,
     content: <CardWithMedia {...cardWithMedia} />
   };
+
+  const section1Classes = section1Styles();
+  const { section1 } = section1Classes;
+
+  const section2Classes = section2Styles();
+  const { section2 } = section2Classes;
 
   return (
     <Container className="BackgroundImage" maxWidth="lg">
