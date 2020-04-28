@@ -39,7 +39,7 @@ const defaultProps = {
  * Styles the component
  */
 const useStyles = makeStyles(theme => ({
-  media: {
+  cardMedia: {
     width: "100vw",
     height: "calc(100vw / 1.83)", // aspectRatio={1494 / 814 = 1.83}
 
@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
 
-  actionsClass: {
+  cardActions: {
     /**
      * Could not make spacing work with the MUI API: https://material-ui.com/api/card-actions/#cardactions-api
      */

@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
 
-  contentClass: {
+  cardContent: {
     /**
      * Keep 45-60 chars per row for long text
      */
@@ -79,34 +79,30 @@ const CardWithMedia = props => {
     card,
     cardContainer,
     imageContainer,
-    media,
+    cardMedia,
     contentContainer,
-    contentClass,
-    actionsClass
+    cardContent,
+    cardActions
   } = classes;
 
   const {
-    card: klassCard,
-    cardContainer: klassCardContainer,
-    imageContainer: klassImageContainer,
-    media: klassMedia,
-    contentContainer: klassContentContainer,
-    contentClass: klassContentClass,
-    actionsClass: klassActionsClass
+    card: card2,
+    cardContainer: cardContainer2,
+    imageContainer: imageContainer2,
+    cardMedia: cardMedia2,
+    contentContainer: contentContainer2,
+    cardContent: cardContent2,
+    cardActions: cardActions2
   } = klasses;
 
   return (
-    <Card
-      className={clsx("CardWithMedia", card, klassCard)}
-      elevation={0}
-      square
-    >
+    <Card className={clsx("CardWithMedia", card, card2)} elevation={0} square>
       <Grid
         container
         className={clsx(
           "CardWithMediaCardContainer",
           cardContainer,
-          klassCardContainer
+          cardContainer2
         )}
       >
         {image && (
@@ -115,14 +111,14 @@ const CardWithMedia = props => {
             className={clsx(
               "CardWithMediaImageContainer",
               imageContainer,
-              klassImageContainer
+              imageContainer2
             )}
             xs={12}
             md={6}
             xl={5}
           >
             <CardMedia
-              className={clsx("CardMedia", media, klassMedia)}
+              className={clsx("CardMedia", cardMedia, cardMedia2)}
               image={image}
               title={imageTitle}
             />
@@ -134,20 +130,20 @@ const CardWithMedia = props => {
             className={clsx(
               "CardWithMediaContentContainer",
               contentContainer,
-              klassContentContainer
+              contentContainer2
             )}
             xs={12}
             md={6}
             xl={5}
           >
             <CardContent
-              className={clsx("CardContent", contentClass, klassContentClass)}
+              className={clsx("CardContent", cardContent, cardContent2)}
             >
               {content}
             </CardContent>
             {actions && (
               <CardActions
-                className={clsx("CardActions", actionsClass, klassActionsClass)}
+                className={clsx("CardActions", cardActions, cardActions2)}
               >
                 {actions}
               </CardActions>
