@@ -5,6 +5,7 @@ import { usePreferredTheme } from "./hooks";
 
 import Home from "./components/home/Home";
 import Forms from "./components/forms/Forms";
+import Cards from "./components/cards/Cards";
 import Theming from "./components/theming/Theming";
 import { finsterTheme } from "./components/theming/Finster";
 
@@ -57,6 +58,9 @@ const App = () => {
             </Route>
             <Route path="/theming">
               <Theming />
+            </Route>
+            <Route path="/cards">
+              <Cards />
             </Route>
           </Switch>
         </Router>
