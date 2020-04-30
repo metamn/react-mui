@@ -8,6 +8,7 @@ import Forms from "./components/_forms/Forms";
 import Cards from "./components/_cards/Cards";
 import Theming from "./components/_theming/Theming";
 import { finsterTheme } from "./components/_theming/Finster";
+import Learn from "./components/_learn/Learn";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
@@ -52,6 +53,9 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="/learn">
+              <Learn />
             </Route>
             <Route path="/forms">
               <Forms />
