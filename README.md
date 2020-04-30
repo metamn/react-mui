@@ -4,32 +4,38 @@ Playing with React and Material UI. See https://react-mui.metamn.now.sh/
 
 ## Status
 
-This is a work in progress document. Just fyi ... don't take actions yet based on it.
+This is a work in progress document. It's complete enough to take actions based on it. To use it as a loose guideline which might change slightly over time.
 
 ## Summary
 
 ### 1. Use as less MUI components as possible
 
-- For content, Grid and Card should be well enough. Try to avoid Paper, Box.
-- For special elements like Navigation, Forms you'll find the examples here. (Or ask if they are missing)
-
 MUI is the most popular Design System out there. Yet it has to be used with care.
 
 Component functionality might easily overlap; the layout can be easily broken; code can become more complicated than necessary; and so on.
 
-A minimalist approach can reduce all above problems and offer _best practices_.
+A minimalist approach can reduce all above problems and offer _best practices_:
+
+1. For content, Grid and Card should be well enough. Try to avoid Paper, Box.
+2. For non-content and _special_ elements not lited on MUI you can find a good selection of custom components here. Please add yours, too.
 
 ### 2. Don't write CSS by hand
-
-- Use `makeStyles` only when adding responsiveness
 
 Design Systems are meant to replace HTML and CSS written by hand. If your code code contains handwritten CSS then it should be refactored until all CSS code is simplified down to responsiveness.
 
 It's rather adjust the Design System once (globally, by customizing the theme) than overwrite it many times (locally, by adding custom CSS - exceptions - in components).
 
+Use `makeStyles` only when adding:
+
+1. Responsiveness
+2. Missing API styling (like Card background color)
+3. Image sizing
+4. Implement non-MUI specific design elements (like background images, transparent header, etc.)
+5. Adjust spacing
+
 ## Guidelines
 
-### Set up
+### Set up / CSS Reset
 
 - https://material-ui.com/components/css-baseline/
 
@@ -86,6 +92,13 @@ It's rather adjust the Design System once (globally, by customizing the theme) t
 </Grid>
 ```
 
+#### Notes on spacing
+
+- MUI's spacing / grid mechanism is far from perfect
+- It uses CSS Flexbox for layout instead of CSS Grid which is a bad practice
+- Has a strange negative margins policy / limitation which has to be tackled all the time manually in the code (See https://material-ui.com/components/grid/#negative-margin)
+- It's `spacing={x}` construct inserts both vertical and horizontal spacing which breaks the visual flow. Sometimes either the horizontal or vertical spacing set on the Grid component has to be removed manually with custom styles.
+
 ### Content
 
 - There are many types of elements which can be displayed on a webpage: content, navigation, inputs (forms), notifications, decorations (icons, background images, ...) and so.
@@ -116,66 +129,31 @@ It's rather adjust the Design System once (globally, by customizing the theme) t
 
 ### Responsiveness
 
-#### Inside `makeStyles`
+- With `makeStyles` and `useMediaQuery` MUI provides a quite good enough toolset to enable responsiveness
+- Breakpoints are quite limited (like has no `portrait` or `landscape` options) or even incomplete (tackling iPad Pro). Be prepared to add new ones.
 
-##### `theme.breakpoints`
+General rules:
 
-- https://material-ui.com/customization/default-theme/#default-theme
-- Quite limited (like has no `portrait` or `landscape` options)
+- Always build from top to bottom, ie from mobile to desktop screens. (Mobile first design)
+- This makes sure only `up` breakpoints are used, no `down`s. This cleans up heavily the code and the mental process.
 
 ```js
 const useStyles = makeStyles(theme => ({
   dashboard: {
-    "& .dashboardContentContainer": {
-      ...
+	// mobile styles first
+	...
 
-      [theme.breakpoints.down("lg")]: {
-        ...
-      },
+	// then tablet
+	[theme.breakpoints.up("md")]: {
+  	  ...
+  	},
 
-      [theme.breakpoints.down("md")]: {
-        ...
-      }
-    }
+	// then laptop
+  	[theme.breakpoints.up("lg")]: {
+  	  ...
+  	}
   }
 }));
-```
-
-##### `react-responsive`
-
-- https://github.com/contra/react-responsive
-- https://github.com/metamn/react-mui/blob/master/src/hooks/useMedia/useMedia.js
-
-```js
-const useStyles = makeStyles(theme => ({
-  card: {
-    display: "flex",
-
-    [`${Media.portrait}`]: {
-      flexDirection: "column"
-    },
-
-    [`${Media.landscape}`]: {
-      alignItems: "center"
-    }
-  },
-  media: {
-    width: 512,
-    height: 512,
-
-    [`${Media.landscape}`]: {
-      order: 2
-    }
-  }
-}));
-```
-
-#### Outside `makeStyles`
-
-- MUI's own https://material-ui.com/components/use-media-query/#usemediaquery
-
-```js
-const isPortrait = useMediaQuery("(orientation: portrait)");
 ```
 
 ### Dark mode
