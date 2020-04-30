@@ -33,6 +33,16 @@ Use `makeStyles` only when adding:
 4. Implement non-MUI specific design elements (like background images, transparent header, etc.)
 5. Adjust spacing. (See a later chapter about MUIs improper grid technology)
 
+### 3. Be project specific
+
+Every project comes up with project specific design elements. Let's say a special display of content via Cards, or more, even these Cards stretched full screen and having a background image.
+
+The first and foremost task is to identify and implement these project specific components. Then reause them across the design.
+
+Think MUI as a general framework. Think these components as a project specific framework. Good code uses mostly project specific components and do not touch directly the base MUI components.
+
+Examples in this repo: `CardWithMedia`, `SectionWithBackgroundImage`.
+
 ## Guidelines
 
 ### Set up / CSS Reset
