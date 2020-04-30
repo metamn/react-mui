@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { usePreferredTheme } from "./hooks";
 
-import Home from "./components/home/Home";
-import Forms from "./components/forms/Forms";
-import Cards from "./components/cards/Cards";
-import Theming from "./components/theming/Theming";
-import { finsterTheme } from "./components/theming/Finster";
+import Home from "./components/_home/Home";
+import Forms from "./components/_forms/Forms";
+import Cards from "./components/_cards/Cards";
+import Theming from "./components/_theming/Theming";
+import { finsterTheme } from "./components/_theming/Finster";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";

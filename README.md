@@ -17,7 +17,7 @@ Component functionality might easily overlap; the layout can be easily broken; c
 A minimalist approach can reduce all above problems and offer _best practices_:
 
 1. For content, Grid and Card should be well enough. Try to avoid Paper, Box.
-2. For non-content and _special_ elements not lited on MUI you can find a good selection of custom components here. Please add yours, too.
+2. For non-content and _special_ elements not listed on MUI you can find a good selection of custom components here. Please add yours, too.
 
 ### 2. Don't write CSS by hand
 
