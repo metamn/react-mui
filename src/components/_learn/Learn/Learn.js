@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 
 import Header from "../../Header";
+import Theory, { TheoryAsCard } from "../Theory";
+import Rules, { RulesAsCard } from "../Rules";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -41,26 +43,22 @@ const Learn = props => {
                 <Header currentPage="Learn" />
               </Grid>
             </Grid>
-            {/*
             <Grid container spacing={3}>
               <Grid item xs={12} sm={6} md={4}>
-                <ControlledAsCard url={url} />
+                <TheoryAsCard url={url} />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
-                <UncontrolledCard url={url} />
+                <RulesAsCard url={url} />
               </Grid>
             </Grid>
-			*/}
           </Container>
         </Route>
-        {/*
-        <Route path={`${path}/uncontrolled`}>
-          <Uncontrolled />
+        <Route path={`${path}/theory`}>
+          <Theory />
         </Route>
-        <Route path={`${path}/controlled`}>
-          <Controlled />
+        <Route path={`${path}/rules`}>
+          <Rules />
         </Route>
-		*/}
       </Switch>
     </>
   );
