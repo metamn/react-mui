@@ -31,7 +31,7 @@ Use `makeStyles` only when adding:
 2. Missing API styling (like Card background color)
 3. Image sizing
 4. Implement non-MUI specific design elements (like background images, transparent header, etc.)
-5. Adjust spacing
+5. Adjust spacing. (See a later chapter about MUIs improper grid technology)
 
 ## Guidelines
 
